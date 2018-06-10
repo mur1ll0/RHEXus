@@ -84,8 +84,54 @@
 
         </GridLayout>
 
-        
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="3"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+            <TextView
+                android:id="@+id/ano"
+                android:text="ANO"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:textColor="#BBBBBB"
+                android:background="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:padding="10dp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:id="@+id/mes"
+                android:text="MÊS"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:textColor="#BBBBBB"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:padding="10dp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:id="@+id/semana"
+                android:text="SEMANA"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:textColor="#BBBBBB"
+                android:background="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_column="2"
+                android:layout_columnWeight="1.8"
+                android:padding="10dp"
+                android:textAlignment="center"
+                />
 
+        </GridLayout>
 
     </LinearLayout>
 

@@ -14,7 +14,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -54,6 +56,33 @@ public class MainActivity extends AppCompatActivity
                 drawer.openDrawer(navigationView);
             }
 
+        });
+
+        //MENU RELATÓRIO RÁPIDO
+        final TextView ano = (TextView) findViewById(R.id.ano);
+        final TextView mes = (TextView) findViewById(R.id.mes);
+        final TextView semana = (TextView) findViewById(R.id.semana);
+
+        ano.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ano.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                mes.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                semana.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            }
+        });
+        mes.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ano.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                mes.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                semana.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            }
+        });
+        semana.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ano.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                mes.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                semana.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            }
         });
     }
 
