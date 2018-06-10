@@ -13,10 +13,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -84,6 +90,32 @@ public class MainActivity extends AppCompatActivity
                 semana.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
             }
         });
+
+        //PIECHART
+        final PieChart graph = findViewById(R.id.graph);
+        graph.setTransparentCircleRadius(0);
+        graph.setHoleRadius(0);
+        graph.setDescription(null);
+
+        ArrayList<PieEntry> yData = new ArrayList<PieEntry>();
+        yData.add(new PieEntry(new Float(99133.50), 0));
+        yData.add(new PieEntry(new Float(9523.40), 1));
+
+        final PieDataSet data = new PieDataSet(yData, "");
+        data.setSliceSpace(0);
+        //data.setSelectionShift(2);
+        data.setValueTextSize(12);
+
+        ArrayList<Integer> graphColors = new ArrayList<Integer>();
+        graphColors.add(Color.GREEN);
+        graphColors.add(Color.BLUE);
+        data.setColors(graphColors);
+
+        PieData dados = new PieData(data);
+        graph.setData(dados);
+        graph.highlightValues(null);
+        graph.invalidate();
+
     }
 
     @Override

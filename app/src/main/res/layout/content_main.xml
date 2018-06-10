@@ -94,7 +94,7 @@
             <TextView
                 android:id="@+id/ano"
                 android:text="ANO"
-                android:textSize="28dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#BBBBBB"
                 android:background="@color/colorPrimary"
@@ -107,7 +107,7 @@
             <TextView
                 android:id="@+id/mes"
                 android:text="MÊS"
-                android:textSize="28dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#BBBBBB"
                 android:background="@color/colorPrimaryDark"
@@ -120,7 +120,7 @@
             <TextView
                 android:id="@+id/semana"
                 android:text="SEMANA"
-                android:textSize="28dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#BBBBBB"
                 android:background="@color/colorPrimary"
@@ -132,6 +132,59 @@
                 />
 
         </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Vendas"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:id="@+id/totVend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="R$97.133,50"
+                android:textSize="20dp"
+                android:textColor="#117711"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total a Receber"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:id="@+id/totRec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="R$9.523,40"
+                android:textSize="20dp"
+                android:textColor="#111177"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                />
+
+        </LinearLayout>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/graph"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="5dp" />
 
     </LinearLayout>
 
