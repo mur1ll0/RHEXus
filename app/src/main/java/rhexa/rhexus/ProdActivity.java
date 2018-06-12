@@ -17,7 +17,7 @@ public class ProdActivity extends AppCompatActivity {
         nav_menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                drawer.openDrawer(navigationView);
+                //drawer.openDrawer(navigationView);
             }
 
         });
