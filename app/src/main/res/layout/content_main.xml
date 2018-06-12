@@ -56,7 +56,7 @@
                 android:layout_width="0dp"
                 android:layout_column="0"
                 android:layout_columnWeight="1"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="20dp"
                 android:layout_row="0"
                 android:layout_rowWeight="1"
                 android:scaleType="fitCenter"
@@ -66,7 +66,7 @@
                 android:layout_width="0dp"
                 android:layout_column="1"
                 android:layout_columnWeight="1"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="20dp"
                 android:layout_row="0"
                 android:layout_rowWeight="1"
                 android:scaleType="fitCenter"
@@ -94,7 +94,7 @@
             <TextView
                 android:id="@+id/ano"
                 android:text="ANO"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#BBBBBB"
                 android:background="@color/colorPrimary"
@@ -107,7 +107,7 @@
             <TextView
                 android:id="@+id/mes"
                 android:text="MÊS"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#BBBBBB"
                 android:background="@color/colorPrimaryDark"
@@ -120,7 +120,7 @@
             <TextView
                 android:id="@+id/semana"
                 android:text="SEMANA"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#BBBBBB"
                 android:background="@color/colorPrimary"
@@ -183,7 +183,7 @@
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/graph"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="200dp"
             android:layout_marginTop="5dp" />
 
     </LinearLayout>
