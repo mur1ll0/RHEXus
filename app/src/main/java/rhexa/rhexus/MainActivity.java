@@ -1,5 +1,6 @@
 package rhexa.rhexus;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -154,6 +155,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_itens) {
             // Handle the camera action
         } else if (id == R.id.nav_people) {
+            Intent it = new Intent( this, PessoaListActivity.class);
+            startActivity(it);
 
         } else if (id == R.id.nav_pedido) {
 

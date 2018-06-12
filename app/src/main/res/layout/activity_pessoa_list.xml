@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/soft_grey_background"
+    tools:context=".PessoaListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:columnCount="2">
+
+            <ImageView
+                android:id="@+id/nav_menu"
+                android:layout_width="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="0.16"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bt_op" />
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
