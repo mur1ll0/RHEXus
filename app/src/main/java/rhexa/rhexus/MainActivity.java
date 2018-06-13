@@ -149,15 +149,14 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        Intent it = null;
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-            this.setContentView(R.layout.new_prod_layout);
         if (id == R.id.nav_itens) {
-            // Handle the camera action
+            it = new Intent(this, newProdActivity.class);
         } else if (id == R.id.nav_people) {
-            Intent it = new Intent( this, PessoaListActivity.class);
-            startActivity(it);
-
+            it = new Intent(this, PessoaListActivity.class);
         } else if (id == R.id.nav_pedido) {
 
         } else if (id == R.id.nav_opt) {
@@ -166,6 +165,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
+        startActivity(it);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
