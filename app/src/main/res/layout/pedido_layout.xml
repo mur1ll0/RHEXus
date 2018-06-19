@@ -68,19 +68,7 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:padding="10dp"
             android:textAlignment="center"
             />
-        <TextView
-            android:id="@+id/mes"
-            android:text="CLIENTE"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="#BBBBBB"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:padding="10dp"
-            android:textAlignment="center"
-            />
+
         <TextView
             android:id="@+id/semana"
             android:text="FINALIZAR"
