@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class PedidoActivity extends AppCompatActivity {
 
@@ -22,6 +23,21 @@ public class PedidoActivity extends AppCompatActivity {
             }
 
         });
+        
+        final TextView produtos = (TextView) findViewById(R.id.produtos);
+        final TextView finalizar = (TextView) findViewById(R.id.finalizar);
 
+        produtos.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                produtos.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                finalizar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            }
+        });
+        finalizar.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                produtos.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                finalizar.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            }
+        });
     }
 }
