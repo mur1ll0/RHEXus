@@ -77,7 +77,6 @@
                     android:layout_columnWeight="1"
                     android:ems="30"
                     android:inputType="textPersonName"
-                    android:defaultFocusHighlightEnabled="false"
                     />
 
             </GridLayout>
