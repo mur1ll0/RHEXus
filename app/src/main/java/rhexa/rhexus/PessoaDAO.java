@@ -3,6 +3,9 @@ package rhexa.rhexus;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import java.util.List;
+import android.database.Cursor;
+import java.util.ArrayList;
 
 import static rhexa.rhexus.BancoDados.getDB;
 
@@ -49,5 +52,18 @@ public class PessoaDAO {
         db.delete(Pessoa.TABELA, Pessoa.ID + " = ?", where);
     }
 
+    public List<Pessoa> listar(){
+        List<Pessoa> pessoas = new java.util.ArrayList<Pessoa>();
+        Cursor c = db.query(Pessoa.TABELA, Pessoa.COLUNAS, null, null,null,null,null);
+        if(c.moveToFirst()){
+            do {
+                Pessoa pessoa = new Pessoa();
+                pessoa.setId(c.getLong(c.getColumnIndex(Pessoa.ID)));
+                pessoa.setNome(c.getString(c.getColumnIndex(Pessoa.NOME)));
+            } while (c.moveToNext());
+
+        }
+        return pessoas;
+    }
 
 }
