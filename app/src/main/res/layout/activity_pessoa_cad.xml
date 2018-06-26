@@ -6,4 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".PessoaCadActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <EditText
+        android:id="@+id/activity_pessoa_cad_edtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Nome"
+         />
+
+    <EditText
+        android:id="@+id/activity_pessoa_cad_edId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:inputType="textPersonName"
+
+        android:text="Código"/>
+
+    <Button
+        android:id="@+id/activity_pessoa_cad_btnSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="salvarCadPessoa"
+        android:text="Salvar"
+        android:layout_gravity="center|bottom"/>
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

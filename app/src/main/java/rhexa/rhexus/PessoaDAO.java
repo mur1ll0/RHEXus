@@ -60,6 +60,24 @@ public class PessoaDAO {
                 Pessoa pessoa = new Pessoa();
                 pessoa.setId(c.getLong(c.getColumnIndex(Pessoa.ID)));
                 pessoa.setNome(c.getString(c.getColumnIndex(Pessoa.NOME)));
+                pessoas.add(pessoa);
+            } while (c.moveToNext());
+
+        }
+        return pessoas;
+    }
+
+    public List<Pessoa> listar(int id){
+        List<Pessoa> pessoas = new java.util.ArrayList<Pessoa>();
+        Cursor c = db.query(Pessoa.TABELA, Pessoa.COLUNAS, null, null,null,null,null);
+        if(c.moveToFirst()){
+            do {
+                Pessoa pessoa = new Pessoa();
+                pessoa.setId(c.getLong(c.getColumnIndex(Pessoa.ID)));
+                pessoa.setNome(c.getString(c.getColumnIndex(Pessoa.NOME)));
+                if (pessoa.getId() == id){
+                    pessoas.add(pessoa);
+                }
             } while (c.moveToNext());
 
         }
