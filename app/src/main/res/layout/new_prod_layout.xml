@@ -71,13 +71,12 @@
                     />
 
                 <EditText
-                    android:id="@+id/name"
+                    android:id="@+id/new_prod_layout_editNome"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:ems="30"
-                    android:inputType="textPersonName"
-                    />
+                    android:inputType="textPersonName" />
 
             </GridLayout>
 
@@ -91,12 +90,11 @@
                 />
 
             <EditText
-                android:id="@+id/desc"
+                android:id="@+id/new_prod_layout_editdesc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ems="30"
-                android:inputType="textPersonName"
-                />
+                android:inputType="textPersonName" />
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -122,13 +120,12 @@
                         />
 
                     <EditText
-                        android:id="@+id/custo"
+                        android:id="@+id/new_prod_layout_editcusto"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:ems="30"
-                        android:inputType="numberDecimal"
                         android:hint="R$"
-                        />
+                        android:inputType="numberDecimal" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -148,13 +145,12 @@
                         />
 
                     <EditText
-                        android:id="@+id/preco"
+                        android:id="@+id/new_prod_layout_editpreco"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:ems="30"
-                        android:inputType="numberDecimal"
                         android:hint="R$"
-                        />
+                        android:inputType="numberDecimal" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -174,12 +170,12 @@
                         />
 
                     <EditText
-                        android:id="@+id/qntd"
+                        android:id="@+id/new_prod_layout_editqntd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="numberDecimal"
-                        />
+                        android:hint="0.0"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -199,24 +195,28 @@
                         />
 
                     <EditText
-                        android:id="@+id/margem"
+                        android:id="@+id/new_prod_layout_editmargem"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:ems="30"
-                        android:inputType="numberDecimal"
                         android:hint="%"
-                        />
+                        android:inputType="numberDecimal" />
                 </LinearLayout>
 
             </GridLayout>
 
             <ImageView
+                android:id="@+id/new_prod_layout_editimage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher_foreground"
-                />
+                android:src="@drawable/ic_launcher_foreground" />
 
-
+            <Button
+                android:id="@+id/new_prod_layout_savebt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#AAAAAA"
+                android:text="Salvar" />
 
         </LinearLayout>
 

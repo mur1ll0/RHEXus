@@ -19,14 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProdActivity"></activity>
+        <activity android:name=".ProdActivity" />
         <activity
             android:name=".newProdActivity"
-            android:windowSoftInputMode="stateHidden">
-
-        </activity>
-        <activity android:name=".PessoaListActivity"></activity>
-        <activity android:name=".PedidoActivity"></activity>
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".PessoaListActivity" />
+        <activity android:name=".PedidoActivity" />
+        <activity android:name=".Produto" />
+        <activity android:name=".ProdutoDAO"></activity>
     </application>
 
 </manifest>
