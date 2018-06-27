@@ -16,7 +16,7 @@ public class PessoaDAO {
         db = BancoDados.getDB(context);
     }
 
-    public void salvarOuAlterar(Pessoa pessoa){
+    public void SalvarOuAlterar(Pessoa pessoa){
         if (pessoa.getId() > 0){
             alterar(pessoa);
         }else{
@@ -43,7 +43,6 @@ public class PessoaDAO {
         values.put(Pessoa.CPFCNPJ, pessoa.getCpfcnpj());
         values.put(Pessoa.TELEFONE, pessoa.getTelefone());
 
-
         db.update(Pessoa.TABELA, values, Pessoa.ID + " = ?", where);
     }
 
@@ -60,6 +59,10 @@ public class PessoaDAO {
                 Pessoa pessoa = new Pessoa();
                 pessoa.setId(c.getLong(c.getColumnIndex(Pessoa.ID)));
                 pessoa.setNome(c.getString(c.getColumnIndex(Pessoa.NOME)));
+                pessoa.setTipo(c.getString(c.getColumnIndex(Pessoa.TIPO)));
+                pessoa.setCpfcnpj(c.getString(c.getColumnIndex(Pessoa.CPFCNPJ)));
+                pessoa.setEndereco(c.getString(c.getColumnIndex(Pessoa.ENDERECO)));
+                pessoa.setTelefone(c.getString(c.getColumnIndex(Pessoa.TELEFONE)));
                 pessoas.add(pessoa);
             } while (c.moveToNext());
 
@@ -75,6 +78,10 @@ public class PessoaDAO {
                 Pessoa pessoa = new Pessoa();
                 pessoa.setId(c.getLong(c.getColumnIndex(Pessoa.ID)));
                 pessoa.setNome(c.getString(c.getColumnIndex(Pessoa.NOME)));
+                pessoa.setTipo(c.getString(c.getColumnIndex(Pessoa.TIPO)));
+                pessoa.setCpfcnpj(c.getString(c.getColumnIndex(Pessoa.CPFCNPJ)));
+                pessoa.setEndereco(c.getString(c.getColumnIndex(Pessoa.ENDERECO)));
+                pessoa.setTelefone(c.getString(c.getColumnIndex(Pessoa.TELEFONE)));
                 if (pessoa.getId() == id){
                     pessoas.add(pessoa);
                 }

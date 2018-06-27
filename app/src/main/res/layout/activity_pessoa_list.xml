@@ -38,11 +38,13 @@
             android:layout_height="228dp"
             android:layout_above="@+id/activity_pessoa_list_lvPessoas"
             android:layout_weight="0.97" />
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:onClick="salvarCadPessoa"/>
+            android:text="Novo"
+            android:layout_gravity="center|bottom"
+            android:onClick="novoCadastroPessoa"/>
+
 
     </LinearLayout>
 

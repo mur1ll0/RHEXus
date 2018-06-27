@@ -53,7 +53,8 @@ public class PessoaListActivity extends ListActivity {
 
     public void novoCadastroPessoa(View v){
         Intent it = new Intent(this,PessoaCadActivity.class);
-
+        String message = "";
+        it.putExtra(EXTRA_MESSAGE, message);
         startActivityForResult(it,1);
     }
 }

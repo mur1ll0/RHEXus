@@ -10,24 +10,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <EditText
-        android:id="@+id/activity_pessoa_cad_edtNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Nome"
+
+        <EditText
+            android:id="@+id/activity_pessoa_cad_edtId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:hint="Código" />
+
+        <EditText
+            android:id="@+id/activity_pessoa_cad_edtNome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:hint="Nome"/>
+
+        <EditText
+            android:id="@+id/activity_pessoa_cad_edtTipo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Tipo"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/activity_pessoa_cad_edtCPFCNPJ"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Numero Documento"/>
+
+        <EditText
+            android:id="@+id/activity_pessoa_cad_edtEndereco"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Endereço"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/activity_pessoa_cad_edtTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="phone"/>
+
+
+
+
          />
 
-    <EditText
-        android:id="@+id/activity_pessoa_cad_edId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:inputType="textPersonName"
-
-        android:text="Código"/>
-
-    <Button
+        <Button
         android:id="@+id/activity_pessoa_cad_btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
