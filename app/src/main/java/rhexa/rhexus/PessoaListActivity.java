@@ -10,6 +10,7 @@ import android.content.Intent;
 
 import android.view.View;
 
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 
@@ -17,6 +18,7 @@ public class PessoaListActivity extends ListActivity {
     private PessoaDAO pessoaDAO;
     private List<Pessoa> pessoas;
     private PessoaListAdapter pessoaListAdapter;
+
     public final static String EXTRA_MESSAGE = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class PessoaListActivity extends ListActivity {
         pessoas = pessoaDAO.listar();
         pessoaListAdapter = new PessoaListAdapter(this, R.layout.activity_pessoa_list_item, pessoas);
         setListAdapter(pessoaListAdapter);
+
+
 
     }
 

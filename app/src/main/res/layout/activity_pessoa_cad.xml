@@ -26,12 +26,12 @@
             android:inputType="textPersonName"
             android:hint="Nome"/>
 
-        <EditText
-            android:id="@+id/activity_pessoa_cad_edtTipo"
+        <Spinner
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Tipo"
-            android:inputType="text"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_pessoa_cad_spTipo">
+
+        </Spinner>
 
         <EditText
             android:id="@+id/activity_pessoa_cad_edtCPFCNPJ"
