@@ -9,3 +9,4 @@
 .externalNativeBuild
 .idea/modules.xml
 gradle/wrapper/gradle-wrapper.properties
+.idea/misc.xml
