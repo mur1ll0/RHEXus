@@ -44,8 +44,7 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_itens) {
-            it = getIntent();
-            finish();
+            it = new Intent(this, ProdActivity.class);
         } else if (id == R.id.nav_people) {
             it = new Intent(this, PessoaListActivity.class);
         } else if (id == R.id.nav_pedido) {

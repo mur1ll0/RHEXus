@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class ProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,6 +31,14 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
             drawer.openDrawer(navigationView);
         }
 
+        });
+
+        //Abrir tela Cadastro novos produtos
+        Button newProd = findViewById(R.id.prod_layout_novobt);
+        newProd.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent it = new Intent(ProdActivity.this, newProdActivity.class);
+            }
         });
 
     }
