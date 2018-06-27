@@ -1,31 +1,23 @@
 package rhexa.rhexus;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import rhexa.rhexus.R;
 import java.util.List;
-import android.widget.ArrayAdapter;
-import android.widget.AdapterView;
+
 import android.app.ListActivity;
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.view.View;
+
+import android.widget.TextView;
+
 
 public class PessoaListActivity extends ListActivity {
     private PessoaDAO pessoaDAO;
     private List<Pessoa> pessoas;
     private PessoaListAdapter pessoaListAdapter;
+    public final static String EXTRA_MESSAGE = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +39,22 @@ public class PessoaListActivity extends ListActivity {
 
         pessoaListAdapter.addAll(pessoas);
         pessoaListAdapter.notifyDataSetChanged();
+    }
+
+    public void abrirCadastroPessoa(View v){
+        Intent it = new Intent(this, PessoaCadActivity.class);
+
+        TextView id = (TextView) v.findViewById(R.id.pessoa_list_item_tvId);
+        String message = id.getText().toString();
+        it.putExtra(EXTRA_MESSAGE, message);
+
+        startActivityForResult(it, 1);
+    }
+
+    public void novoCadastroPessoa(View v){
+        Intent it = new Intent(this,PessoaCadActivity.class);
+
+        startActivityForResult(it,1);
     }
 }
 

@@ -39,6 +39,11 @@
             android:layout_above="@+id/activity_pessoa_list_lvPessoas"
             android:layout_weight="0.97" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="salvarCadPessoa"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
