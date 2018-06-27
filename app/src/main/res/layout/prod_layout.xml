@@ -49,6 +49,35 @@
 
         </GridLayout>
 
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            >
+
+            <EditText
+                android:id="@+id/prod_layout_busca"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:hint="Buscar"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/prod_layout_novobt"
+                android:text="Novo"
+                android:layout_marginRight="15dp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="0.3"
+                android:ems="30"
+                android:layout_height="wrap_content"
+                android:background="#AAAAAA"
+                />
+
+        </GridLayout>
+
     </LinearLayout>
 
 </ScrollView>

@@ -11,6 +11,7 @@ public class Produto{
     private String desc;
     private double custo;
     private double quantidade;
+    private String codigo;
     private double preco;
     private double margem;
     private Blob image;
@@ -18,6 +19,7 @@ public class Produto{
     public static final String ID = "id";
     public static final String NOME = "nome";
     public static final String DESC = "desc";
+    public static final String CODIGO = "codigo";
     public static final String CUSTO = "custo";
     public static final String QUANTIDADE = "quantidade";
     public static final String PRECO = "preco";
@@ -46,6 +48,14 @@ public class Produto{
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public double getCusto() {
