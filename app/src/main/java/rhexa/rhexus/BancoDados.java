@@ -19,7 +19,7 @@ public class BancoDados {
     // Cria a tabela com o "_id" sequencial
     private static final String[] SCRIPT_DATABASE_CREATE = new String[] { // Criar campos conforme necessidade
             "create table pessoa (id integer primary key,nome varchar(60), tipo varchar(10), cpfcnpj varchar(20), endereco varchar(100), telefone varchar(20));",
-            "create table produto (id integer primary key, nome varchar(60), desc varchar(60), codigo varchar(20), custo real, quantidade real, preco real, margem real, image Blob);"
+            "create table produto (id integer primary key, nome varchar(60), desc varchar(60), codigo varchar(44), custo real, quantidade real, preco real, margem real, image Blob);"
     };
 
     private static SQLiteDatabase db;

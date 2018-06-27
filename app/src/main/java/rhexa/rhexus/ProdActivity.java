@@ -38,6 +38,8 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         newProd.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent it = new Intent(ProdActivity.this, newProdActivity.class);
+                startActivity(it);
+                drawer.closeDrawer(GravityCompat.START);
             }
         });
 
