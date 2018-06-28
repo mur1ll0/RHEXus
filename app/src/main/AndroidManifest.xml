@@ -27,6 +27,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".PessoaListActivity" />
         <activity android:name=".PedidoActivity" />
+        <activity android:name=".PessoaCadActivity" />
     </application>
 
 </manifest>
