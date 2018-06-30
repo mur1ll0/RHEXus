@@ -25,6 +25,8 @@ public class Produto{
     public static final String PRECO = "preco";
     public static final String MARGEM = "margem";
     public static final String IMAGE = "image";
+    public static final String TABELA = "produto";
+    public static final String[] COLUNAS = {ID,NOME,DESC,CODIGO,CUSTO,QUANTIDADE,PRECO,MARGEM};
 
     public Long getId() {
         return id;

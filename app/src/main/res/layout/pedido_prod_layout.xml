@@ -13,28 +13,6 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:columnCount="2">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TOTAL:"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="R$"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-        </GridLayout>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,6 +23,7 @@
             android:layout_marginBottom="5dp" />
 
         <LinearLayout
+            android:id="@+id/pedido_prod_lista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
