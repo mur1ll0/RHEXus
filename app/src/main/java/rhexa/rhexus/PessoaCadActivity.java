@@ -16,7 +16,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PessoaCadActivity extends Activity {
+public class PessoaCadActivity extends MainActivity {
 
     EditText edtId,edtNome,edtCPFCNPJ,edtTipo,edtEndereco,edtTelefone;
     Spinner spTipo;
