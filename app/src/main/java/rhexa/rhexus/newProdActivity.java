@@ -33,6 +33,7 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
         edtPreco = (EditText) findViewById(R.id.new_prod_layout_editpreco);
         edtQuantidade = (EditText) findViewById(R.id.new_prod_layout_editqntd);
         edtMargem = (EditText) findViewById(R.id.new_prod_layout_editmargem);
+        produtoDAO = new ProdutoDAO(this);
         Produto produto;
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -66,6 +67,7 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
         if (edtNome.getText().toString().equals("")){
             Toast.makeText(getApplicationContext(), "Informe o nome", Toast.LENGTH_SHORT).show();
         }else{
+            produto.setId(Long.valueOf("0"));
             produto.setNome(edtNome.getText().toString());
             produto.setDesc(edtDesc.getText().toString());
             produto.setCodigo(edtCodigo.getText().toString());
