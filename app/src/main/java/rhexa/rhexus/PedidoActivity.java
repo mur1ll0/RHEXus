@@ -36,8 +36,8 @@ public class PedidoActivity extends AppCompatActivity implements NavigationView.
 
         });
 
-        final TextView produtos = (TextView) findViewById(R.id.produtos);
-        final TextView finalizar = (TextView) findViewById(R.id.finalizar);
+        final TextView produtos = (TextView) findViewById(R.id.pedido_produtos);
+        final TextView finalizar = (TextView) findViewById(R.id.pedido_finalizar);
 
         produtos.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
