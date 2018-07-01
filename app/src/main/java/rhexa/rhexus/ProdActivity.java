@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -19,7 +21,7 @@ import java.util.List;
 import static rhexa.rhexus.PessoaListActivity.EXTRA_MESSAGE;
 
 public class ProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ListActivity prodList;
+    private ListView prodList;
     private ProdutosAdapter produtosAdapter;
     private ProdutoDAO produtoDAO;
     private List<Produto> produtos;
@@ -54,15 +56,16 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         });
 
         ///Listar Produtos
-        prodList = new ListActivity();
+        prodList = findViewById(R.id.prodList);
         produtoDAO = new ProdutoDAO(this);
 
         produtos = produtoDAO.listar();
         produtosAdapter = new ProdutosAdapter(this, R.layout.produtos_adapter_activity, produtos);
-        prodList.setListAdapter(produtosAdapter);
+        prodList.setAdapter(produtosAdapter);
 
 
     }
+
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
