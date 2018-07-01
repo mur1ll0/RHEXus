@@ -28,6 +28,7 @@
         <activity android:name=".PessoaListActivity" />
         <activity android:name=".PedidoActivity" />
         <activity android:name=".PessoaCadActivity" />
+        <activity android:name=".ProdutosAdapter"></activity>
     </application>
 
 </manifest>

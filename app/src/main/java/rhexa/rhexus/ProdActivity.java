@@ -1,5 +1,6 @@
 package rhexa.rhexus;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -11,8 +12,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.List;
+
+import static rhexa.rhexus.PessoaListActivity.EXTRA_MESSAGE;
 
 public class ProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private ListActivity prodList;
+    private ProdutosAdapter produtosAdapter;
+    private ProdutoDAO produtoDAO;
+    private List<Produto> produtos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +53,43 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        ///Listar Produtos
+        prodList = new ListActivity();
+        produtoDAO = new ProdutoDAO(this);
+
+        produtos = produtoDAO.listar();
+        produtosAdapter = new ProdutosAdapter(this, R.layout.produtos_adapter_activity, produtos);
+        prodList.setListAdapter(produtosAdapter);
+
+
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        produtosAdapter.clear();
+        produtos = produtoDAO.listar();
+
+        produtosAdapter.addAll(produtos);
+        produtosAdapter.notifyDataSetChanged();
+    }
+
+    public void abrirCadastroProduto(View v){
+        Intent it = new Intent(this, newProdActivity.class);
+
+        TextView id = (TextView) v.findViewById(R.id.produto_adapter_id);
+        String message = id.getText().toString();
+        it.putExtra(EXTRA_MESSAGE, message);
+
+        startActivityForResult(it, 1);
+    }
+
+    public void novoCadastroProduto(View v){
+        Intent it = new Intent(this,newProdActivity.class);
+        String message = "";
+        it.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(it,1);
+    }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
