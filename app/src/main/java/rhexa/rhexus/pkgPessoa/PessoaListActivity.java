@@ -1,8 +1,8 @@
-package rhexa.rhexus;
+package rhexa.rhexus.pkgPessoa;
 
 
 import android.os.Bundle;
-import rhexa.rhexus.R;
+
 import java.util.List;
 
 import android.app.ListActivity;
@@ -10,8 +10,8 @@ import android.content.Intent;
 
 import android.view.View;
 
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import rhexa.rhexus.R;
 
 
 public class PessoaListActivity extends ListActivity {
@@ -30,9 +30,6 @@ public class PessoaListActivity extends ListActivity {
         pessoas = pessoaDAO.listar();
         pessoaListAdapter = new PessoaListAdapter(this, R.layout.activity_pessoa_list_item, pessoas);
         setListAdapter(pessoaListAdapter);
-
-
-
     }
 
     @Override

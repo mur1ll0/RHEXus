@@ -1,13 +1,11 @@
-package rhexa.rhexus;
+package rhexa.rhexus.pkgPessoa;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import java.util.List;
 import android.database.Cursor;
-import java.util.ArrayList;
-
-import static rhexa.rhexus.BancoDados.getDB;
+import rhexa.rhexus.BancoDados;
 
 public class PessoaDAO {
     SQLiteDatabase db;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/soft_grey_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".pkgPessoa.PessoaCadActivity">
+    tools:context=".pkgTitulo.TituloCadActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 android:layout_row="0"
                 android:layout_rowWeight="1"
                 android:scaleType="fitCenter"
-                android:text="PESSOAS"
+                android:text="TÍTULOS"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="50dp"
@@ -55,48 +55,68 @@
             android:inputType="textPersonName"
             android:hint="Código" />
 
+
         <EditText
-            android:id="@+id/activity_pessoa_cad_edtNome"
+            android:id="@+id/activity_titulo_cad_edtEmissao"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textPersonName"
-            android:hint="Nome"/>
+            android:hint="Emissao"/>
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/activity_pessoa_cad_spTipo">
+            android:id="@+id/activity_titulo_cad_spTipo">
 
         </Spinner>
 
         <EditText
-            android:id="@+id/activity_pessoa_cad_edtCPFCNPJ"
+            android:id="@+id/activity_titulo_cad_edtVencimento"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Numero Documento"/>
+            android:hint="Vencimento"/>
 
         <EditText
-            android:id="@+id/activity_pessoa_cad_edtEndereco"
+            android:id="@+id/activity_titulo_cad_edtPessoaId"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Endereço"
+            android:hint="Cod. Pessoa"
             android:inputType="text"/>
 
         <EditText
-            android:id="@+id/activity_pessoa_cad_edtTelefone"
+            android:id="@+id/activity_titulo_cad_edtPessoaNome"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Telefone"
+            android:hint="Pessoa"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/activity_titulo_cad_edtValor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Valor"
             android:inputType="phone"/>
+
+
+        <EditText
+            android:id="@+id/activity_titulo_cad_edtValorBaixa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Baixado"
+            android:inputType="phone"/>
+        <!--
+    public static final String PESSOAID = "pessoaid";
+    public static final String VALOR = "valor";
+    public static final String VALORBAIXA = "valorBaixa"; -->
 
 
 
 
         <Button
-            android:id="@+id/activity_pessoa_cad_btnSalvar"
+            android:id="@+id/activity_titulo_cad_btnSalvar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="salvarCadPessoa"
+            android:onClick="salvarCadTitulo"
             android:layout_gravity="center|bottom"
             android:background="#AAAAAA"
             android:text="Salvar" />

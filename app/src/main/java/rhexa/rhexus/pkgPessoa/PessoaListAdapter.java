@@ -1,4 +1,4 @@
-package rhexa.rhexus;
+package rhexa.rhexus.pkgPessoa;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
@@ -38,7 +38,5 @@ public class PessoaListAdapter extends ArrayAdapter<Pessoa>{
         tvNome.setText(pessoa.getNome());
         return v;
     }
-
-
 
 }

@@ -1,6 +1,4 @@
-package rhexa.rhexus;
-
-import java.util.Date;
+package rhexa.rhexus.pkgPessoa;
 
 public class Pessoa {
     private Long id;

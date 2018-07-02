@@ -1,18 +1,15 @@
-package rhexa.rhexus;
+package rhexa.rhexus.pkgPessoa;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import rhexa.rhexus.MainActivity;
+import rhexa.rhexus.R;
 
-import java.io.Console;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
