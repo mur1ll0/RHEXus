@@ -92,7 +92,11 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
         if (edtNome.getText().toString().equals("")){
             Toast.makeText(getApplicationContext(), "Informe o nome", Toast.LENGTH_SHORT).show();
         }else{
-            produto.setId(Long.valueOf("0"));
+            if (String.valueOf(edtId.getText().toString()).length() > 0){
+                produto.setId(Long.valueOf(edtId.getText().toString()));
+            }else{
+                produto.setId(Long.valueOf("0"));
+            }
             produto.setNome(edtNome.getText().toString());
             produto.setDesc(edtDesc.getText().toString());
             produto.setCodigo(edtCodigo.getText().toString());
