@@ -9,14 +9,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class newProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    EditText edtId, edtNome, edtDesc, edtCodigo, edtCusto, edtPreco, edtQuantidade, edtMargem;
+    ProdutoDAO produtoDAO;
+    private List<Produto> produtos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_newprod);
+        edtNome = (EditText) findViewById(R.id.new_prod_layout_editNome);
+        edtDesc = (EditText) findViewById(R.id.new_prod_layout_editdesc);
+        edtCodigo = (EditText) findViewById(R.id.new_prod_layout_editcodigo);
+        edtCusto = (EditText) findViewById(R.id.new_prod_layout_editcusto);
+        edtPreco = (EditText) findViewById(R.id.new_prod_layout_editpreco);
+        edtQuantidade = (EditText) findViewById(R.id.new_prod_layout_editqntd);
+        edtMargem = (EditText) findViewById(R.id.new_prod_layout_editmargem);
+        produtoDAO = new ProdutoDAO(this);
+        Produto produto;
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -33,6 +51,35 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
 
         });
 
+        //Salvar Produto
+        Button save = findViewById(R.id.new_prod_layout_savebt);
+        save.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                salvarCadProduto(v);
+            }
+        });
+
+    }
+
+    public void salvarCadProduto(View v){
+        Produto produto = new Produto();
+
+        if (edtNome.getText().toString().equals("")){
+            Toast.makeText(getApplicationContext(), "Informe o nome", Toast.LENGTH_SHORT).show();
+        }else{
+            produto.setId(Long.valueOf("0"));
+            produto.setNome(edtNome.getText().toString());
+            produto.setDesc(edtDesc.getText().toString());
+            produto.setCodigo(edtCodigo.getText().toString());
+            produto.setCusto(Double.parseDouble(edtCusto.getText().toString()));
+            produto.setPreco(Double.parseDouble(edtPreco.getText().toString()));
+            produto.setQuantidade(Double.parseDouble(edtQuantidade.getText().toString()));
+            produto.setMargem(Double.parseDouble(edtMargem.getText().toString()));
+
+            produtoDAO.SalvarOuAlterar(produto);
+
+            finish();
+        }
     }
 
     @Override
