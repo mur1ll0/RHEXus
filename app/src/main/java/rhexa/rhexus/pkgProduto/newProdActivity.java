@@ -1,4 +1,4 @@
-package rhexa.rhexus;
+package rhexa.rhexus.pkgProduto;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -14,7 +14,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import rhexa.rhexus.R;
+import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 
 public class newProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -59,6 +63,24 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
             }
         });
 
+        //Carregar Produto ao clicar
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(ProdActivity.EXTRA_MESSAGE);
+
+        if (message.length() > 0){
+            produtos = new ArrayList<Produto>();
+            produtos = produtoDAO.listar(Integer.valueOf(message));
+
+            for (Produto p : produtos){
+                edtNome.setText(p.getNome());
+                edtDesc.setText(p.getDesc());
+                edtCodigo.setText(p.getDesc());
+                edtCusto.setText(String.valueOf(p.getCusto()));
+                edtPreco.setText(String.valueOf(p.getPreco()));
+                edtQuantidade.setText(String.valueOf(p.getQuantidade()));
+                edtMargem.setText(String.valueOf(p.getMargem()));
+            }
+        }
     }
 
     public void salvarCadProduto(View v){

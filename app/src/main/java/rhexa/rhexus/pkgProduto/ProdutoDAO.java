@@ -1,13 +1,13 @@
-package rhexa.rhexus;
+package rhexa.rhexus.pkgProduto;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import java.util.List;
+
+import rhexa.rhexus.BancoDados;
 
 public class ProdutoDAO {
 

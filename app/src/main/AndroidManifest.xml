@@ -20,13 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProdActivity"
+            android:name=".pkgProduto.ProdActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".newProdActivity"
+            android:name=".pkgProduto.newProdActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".pkgPessoa.PessoaListActivity" />
-        <activity android:name=".PedidoActivity" />
+        <activity android:name=".pkgProduto.PedidoActivity" />
         <activity android:name=".pkgPessoa.PessoaCadActivity" />
         <activity android:name=".pkgTitulo.TituloListActivity"></activity>
         <activity android:name=".pkgTitulo.TituloCadActivity"></activity>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/soft_grey_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="rhexa.rhexus.ProdActivity"
+    tools:context="rhexa.rhexus.pkgProduto.ProdActivity"
     >
 
     <LinearLayout
@@ -77,6 +77,12 @@
                 />
 
         </GridLayout>
+
+        <ListView
+            android:id="@+id/prodList"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            tools:ignore="NestedScrolling" />
 
     </LinearLayout>
 

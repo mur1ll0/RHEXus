@@ -1,4 +1,4 @@
-package rhexa.rhexus;
+package rhexa.rhexus.pkgProduto;
 
 import android.app.Activity;
 import android.os.Bundle;

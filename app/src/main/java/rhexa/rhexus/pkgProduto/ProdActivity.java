@@ -1,6 +1,5 @@
-package rhexa.rhexus;
+package rhexa.rhexus.pkgProduto;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -12,19 +11,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
 
-import static rhexa.rhexus.PessoaListActivity.EXTRA_MESSAGE;
+import rhexa.rhexus.R;
+import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 
 public class ProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ListView prodList;
     private ProdutosAdapter produtosAdapter;
     private ProdutoDAO produtoDAO;
     private List<Produto> produtos;
+    public final static String EXTRA_MESSAGE = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +46,13 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         });
 
         //Abrir tela Cadastro novos produtos
-        Button newProd = findViewById(R.id.prod_layout_novobt);
+        final Button newProd = findViewById(R.id.prod_layout_novobt);
         newProd.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent it = new Intent(ProdActivity.this, newProdActivity.class);
+                /*Intent it = new Intent(ProdActivity.this, newProdActivity.class);
                 startActivity(it);
-                drawer.closeDrawer(GravityCompat.START);
+                drawer.closeDrawer(GravityCompat.START);*/
+                novoCadastroProduto(v);
             }
         });
 
