@@ -60,7 +60,7 @@ public class TituloDAO {
                 titulo.setValorBaixa(c.getFloat(c.getColumnIndex(Titulo.VALORBAIXA)));
                 titulo.setVencimento(c.getString(c.getColumnIndex(Titulo.VENCIMENTO)));
                 titulos.add(titulo);
-            } while (c.moveToFirst());
+            } while (c.moveToNext());
         }
         return titulos;
     }
@@ -80,7 +80,7 @@ public class TituloDAO {
                 titulo.setVencimento(c.getString(c.getColumnIndex(Titulo.VENCIMENTO)));
                 if (id == titulo.getId())
                     titulos.add(titulo);
-            } while (c.moveToFirst());
+            } while (c.moveToNext());
         }
         return titulos;
     }

@@ -8,7 +8,7 @@ public class BancoDados {
     private static final String NOME_BANCO = "trabalho";
 
     // Controle de versao
-    private static final int VERSAO_BANCO = 1; // Mudar a cada nova versão
+    private static final int VERSAO_BANCO = 2; // Mudar a cada nova versão
 
     //Script para fazer drop na tabela
     private static final String[] SCRIPT_DATABASE_DELETE = new String[] {
