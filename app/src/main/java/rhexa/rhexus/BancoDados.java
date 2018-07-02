@@ -13,14 +13,16 @@ public class BancoDados {
     //Script para fazer drop na tabela
     private static final String[] SCRIPT_DATABASE_DELETE = new String[] {
             "DROP TABLE IF EXISTS pessoa;",
-            "DROP TABLE IF EXISTS produto;"
+            "DROP TABLE IF EXISTS produto;",
+            "DROP TABLE IF EXISTS titulo;"
     };
 
     // Cria a tabela com o "_id" sequencial
     private static final String[] SCRIPT_DATABASE_CREATE = new String[] { // Criar campos conforme necessidade
             "create table pessoa (id integer primary key,nome varchar(60), tipo varchar(10), cpfcnpj varchar(20), endereco varchar(100), telefone varchar(20));",
-            "create table produto (id integer primary key, nome varchar(60), desc varchar(60), codigo varchar(44), custo real, quantidade real, preco real, margem real, image Blob);"
-    };
+            "create table produto (id integer primary key, nome varchar(60), desc varchar(60), codigo varchar(44), custo real, quantidade real, preco real, margem real, image Blob);",
+            "create table titulo (id integer primary key, tipo text, emissao text, vencimento text, pessoaId integer, valor real, valorBaixa real);"};
+
 
     private static SQLiteDatabase db;
 
