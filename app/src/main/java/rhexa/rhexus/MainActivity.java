@@ -20,7 +20,6 @@ import com.github.mikephil.charting.data.PieEntry;
 import java.util.ArrayList;
 
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
-import rhexa.rhexus.pkgProduto.PedidoActivity;
 import rhexa.rhexus.pkgProduto.ProdActivity;
 
 public class MainActivity extends AppCompatActivity

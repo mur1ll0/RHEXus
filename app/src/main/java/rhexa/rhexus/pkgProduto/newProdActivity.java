@@ -31,6 +31,7 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_newprod);
+        edtId = (EditText) findViewById(R.id.new_prod_layout_editId);
         edtNome = (EditText) findViewById(R.id.new_prod_layout_editNome);
         edtDesc = (EditText) findViewById(R.id.new_prod_layout_editdesc);
         edtCodigo = (EditText) findViewById(R.id.new_prod_layout_editcodigo);
@@ -73,6 +74,7 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
             produtos = produtoDAO.listar(Integer.valueOf(message));
 
             for (Produto p : produtos){
+                edtId.setText(String.valueOf(p.getId()));
                 edtNome.setText(p.getNome());
                 edtDesc.setText(p.getDesc());
                 edtCodigo.setText(p.getDesc());

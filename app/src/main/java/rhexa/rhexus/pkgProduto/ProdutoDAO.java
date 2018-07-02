@@ -28,6 +28,7 @@ public class ProdutoDAO {
 
     public void salvar(Produto produto){
         ContentValues values = new ContentValues();
+        values.put(Produto.ID, produto.getId());
         values.put(Produto.NOME, produto.getNome());
         values.put(Produto.DESC, produto.getDesc());
         values.put(Produto.CODIGO, produto.getCodigo());
@@ -43,6 +44,7 @@ public class ProdutoDAO {
     public void alterar(Produto produto){
         ContentValues values = new ContentValues();
         String[] where = new String[] {String.valueOf(produto.getId())};
+        values.put(Produto.ID, produto.getId());
         values.put(Produto.NOME, produto.getNome());
         values.put(Produto.DESC, produto.getDesc());
         values.put(Produto.CODIGO, produto.getCodigo());

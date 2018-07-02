@@ -1,4 +1,4 @@
-package rhexa.rhexus.pkgProduto;
+package rhexa.rhexus;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,10 @@ import android.widget.TextView;
 import rhexa.rhexus.R;
 import rhexa.rhexus.newPedidoActivity;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
+import rhexa.rhexus.pkgProduto.Produto;
+import rhexa.rhexus.pkgProduto.ProdutoDAO;
+import rhexa.rhexus.pkgProduto.ProdutosAdapter;
+
 import java.util.List;
 
 
