@@ -6,13 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/soft_grey_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-<<<<<<< HEAD
     tools:context="rhexa.rhexus.pkgProduto.PedidoActivity"
-        >
-=======
-    tools:context="rhexa.rhexus.PedidoActivity"
     >
->>>>>>> f0cd94d07295285e5795dcc963149d83069756d9
 
     <LinearLayout
         android:layout_width="match_parent"

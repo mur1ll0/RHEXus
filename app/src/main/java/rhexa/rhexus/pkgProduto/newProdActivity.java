@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rhexa.rhexus.R;
+import rhexa.rhexus.newPedidoActivity;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 
 public class newProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

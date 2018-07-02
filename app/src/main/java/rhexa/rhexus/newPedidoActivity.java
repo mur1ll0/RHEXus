@@ -14,6 +14,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import rhexa.rhexus.pkgPessoa.PessoaListActivity;
+import rhexa.rhexus.pkgProduto.newProdActivity;
+
 public class newPedidoActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
