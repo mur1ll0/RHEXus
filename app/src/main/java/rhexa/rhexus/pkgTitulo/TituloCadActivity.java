@@ -32,6 +32,7 @@ public class TituloCadActivity extends AppCompatActivity {
         edtPessoaNome = (EditText) findViewById(R.id.activity_titulo_cad_edtPessoaNome);
         edtValor = (EditText) findViewById(R.id.activity_titulo_cad_edtValor);
         edtValorBaixa = (EditText) findViewById(R.id.activity_titulo_cad_edtValorBaixa);
+        spTipo = (Spinner) findViewById(R.id.activity_titulo_cad_spTipo);
 
         tituloDAO = new TituloDAO(this);
 

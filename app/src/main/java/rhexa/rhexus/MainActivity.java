@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 import rhexa.rhexus.pkgProduto.ProdActivity;
+import rhexa.rhexus.pkgTitulo.TituloListActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -113,6 +114,8 @@ public class MainActivity extends AppCompatActivity
             it = new Intent(this, PessoaListActivity.class);
         } else if (id == R.id.nav_pedido) {
             it = new Intent(this, PedidoActivity.class);
+        } else if (id == R.id.nav_titulo){
+            it = new Intent(this, TituloListActivity.class);
         } else if (id == R.id.nav_opt) {
 
         } else if (id == R.id.nav_share) {

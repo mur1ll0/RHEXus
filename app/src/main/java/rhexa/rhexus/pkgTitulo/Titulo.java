@@ -13,7 +13,7 @@ public class Titulo {
     public static final String TIPO = "tipo";
     public static final String EMISSAO = "emissao";
     public static final String VENCIMENTO = "vencimento";
-    public static final String PESSOAID = "pessoaid";
+    public static final String PESSOAID = "pessoaId";
     public static final String VALOR = "valor";
     public static final String VALORBAIXA = "valorBaixa";
     public static final String TABELA = "titulo";
