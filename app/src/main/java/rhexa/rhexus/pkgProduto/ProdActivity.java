@@ -109,7 +109,7 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_people) {
             it = new Intent(this, PessoaListActivity.class);
         } else if (id == R.id.nav_pedido) {
-            it = new Intent(this, PedidoActivity.class);
+            it = new Intent(this, newPedidoActivity.class);
         } else if (id == R.id.nav_opt) {
 
         } else if (id == R.id.nav_share) {

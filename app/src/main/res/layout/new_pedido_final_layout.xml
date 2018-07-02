@@ -90,8 +90,14 @@
                     android:textAlignment="center"
                     android:inputType="numberDecimal"  />
 
-
             </GridLayout>
+
+        <Button
+            android:id="@+id/new_pedido_layout_savebt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#AAAAAA"
+            android:text="Salvar" />
 
     </LinearLayout>
 
