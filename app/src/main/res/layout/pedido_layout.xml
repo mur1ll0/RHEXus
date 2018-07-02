@@ -7,11 +7,11 @@
     android:background="@drawable/soft_grey_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="rhexa.rhexus.PedidoActivity"
-        >
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <GridLayout
@@ -24,8 +24,8 @@
                 android:layout_width="0dp"
                 android:layout_column="0"
                 android:layout_columnWeight="0.16"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_row="0"
                 android:layout_rowWeight="1"
                 android:scaleType="fitCenter"
@@ -35,14 +35,14 @@
                 android:layout_width="0dp"
                 android:layout_column="1"
                 android:layout_columnWeight="1"
-                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_row="0"
                 android:layout_rowWeight="1"
                 android:scaleType="fitCenter"
                 android:text="PEDIDOS"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
-                android:textSize="50sp"
+                android:textSize="50dp"
                 android:textAlignment="center"
                 android:layout_marginTop="5dp"
                 />
@@ -51,72 +51,33 @@
 
         <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:columnCount="2"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             >
-            <TextView
-                android:id="@+id/pedido_produtos"
-                android:text="PRODUTOS"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#BBBBBB"
-                android:background="@color/colorPrimaryDark"
-                android:layout_width="0dp"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:padding="10dp"
-                android:textAlignment="center"
-                />
 
-            <TextView
-                android:id="@+id/pedido_finalizar"
-                android:text="FINALIZAR"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="#BBBBBB"
-                android:background="@color/colorPrimary"
+            <EditText
+                android:id="@+id/pedido_layout_busca"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_width="0dp"
-                android:layout_column="1"
-                android:layout_columnWeight="1.2"
-                android:padding="10dp"
-                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:hint="Buscar"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/pedido_layout_novobt"
+                android:text="Novo"
+                android:layout_marginRight="15dp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="0.3"
+                android:ems="30"
+                android:layout_height="wrap_content"
+                android:background="#AAAAAA"
                 />
 
         </GridLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp">
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="15dp"
-                android:columnCount="2">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TOTAL:"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/pedido_valor_total"
-                    android:layout_width="255dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:text="R$"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
-            </GridLayout>
-        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

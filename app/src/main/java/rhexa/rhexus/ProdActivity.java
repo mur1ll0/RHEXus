@@ -1,6 +1,5 @@
 package rhexa.rhexus;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -12,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -108,7 +106,7 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_people) {
             it = new Intent(this, PessoaListActivity.class);
         } else if (id == R.id.nav_pedido) {
-            it = new Intent(this, PedidoActivity.class);
+            it = new Intent(this, newPedidoActivity.class);
         } else if (id == R.id.nav_opt) {
 
         } else if (id == R.id.nav_share) {
