@@ -99,4 +99,10 @@ public class Produto{
     public void setImage(Blob image) {
         this.image = image;
     }
+
+    @Override
+    public String toString(){
+        String line = id+nome+desc+String.valueOf(custo)+String.valueOf(quantidade)+String.valueOf(codigo)+String.valueOf(preco)+String.valueOf(margem);
+        return line.toLowerCase();
+    }
 }

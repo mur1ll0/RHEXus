@@ -84,6 +84,31 @@ public class ProdutoDAO {
         return produtos;
     }
 
+    public List<Produto> listar(String arg){
+        List<Produto> produtos = new java.util.ArrayList<Produto>();
+        Cursor c = db.query(Produto.TABELA, Produto.COLUNAS, null, null,null,null,null);
+        if(c.moveToFirst()){
+            do {
+                Produto produto = new Produto();
+                produto.setId(c.getLong(c.getColumnIndex(Produto.ID)));
+                produto.setNome(c.getString(c.getColumnIndex(Produto.NOME)));
+                produto.setDesc(c.getString(c.getColumnIndex(Produto.DESC)));
+                produto.setCodigo(c.getString(c.getColumnIndex(Produto.CODIGO)));
+                produto.setCusto(c.getDouble(c.getColumnIndex(Produto.CUSTO)));
+                produto.setPreco(c.getDouble(c.getColumnIndex(Produto.PRECO)));
+                produto.setQuantidade(c.getDouble(c.getColumnIndex(Produto.QUANTIDADE)));
+                produto.setMargem(c.getDouble(c.getColumnIndex(Produto.MARGEM)));
+                //produto.setImage(c.getBlob(c.getColumnIndex(Produto.IMAGE)));
+
+                if(produto.toString().indexOf(arg) != -1) {
+                    produtos.add(produto);
+                }
+            } while (c.moveToNext());
+
+        }
+        return produtos;
+    }
+
     public List<Produto> listar(int id){
         List<Produto> produtos = new java.util.ArrayList<Produto>();
         Cursor c = db.query(Produto.TABELA, Produto.COLUNAS, null, null,null,null,null);

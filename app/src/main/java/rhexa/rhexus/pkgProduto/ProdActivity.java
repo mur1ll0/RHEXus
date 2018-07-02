@@ -7,9 +7,11 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -60,10 +62,19 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         ///Listar Produtos
         prodList = findViewById(R.id.prodList);
         produtoDAO = new ProdutoDAO(this);
+        final EditText search = (EditText) findViewById(R.id.prod_layout_busca);
 
-        produtos = produtoDAO.listar();
+        //produtos = produtoDAO.listar();
         produtosAdapter = new ProdutosAdapter(this, R.layout.produtos_adapter_activity, produtos);
         prodList.setAdapter(produtosAdapter);
+
+        search.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                produtos = produtoDAO.listar(search.getText().toString());
+                return false;
+            }
+        });
 
 
     }
