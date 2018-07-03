@@ -37,6 +37,7 @@ public class ProdutoDAO {
         values.put(Produto.QUANTIDADE, produto.getQuantidade());
         values.put(Produto.MARGEM, produto.getQuantidade());
         //values.put(Produto.IMAGE, produto.getImage());
+        values.put(Produto.ATIVO, produto.getAtivo());
 
         db.insert(Produto.TABELA, null, values);
     }
@@ -53,6 +54,7 @@ public class ProdutoDAO {
         values.put(Produto.QUANTIDADE, produto.getQuantidade());
         values.put(Produto.MARGEM, produto.getQuantidade());
         //values.put(Produto.IMAGE, produto.getImage());
+        values.put(Produto.ATIVO, produto.getAtivo());
 
         db.update(Produto.TABELA, values, Produto.ID + " = ?", where);
     }
@@ -77,6 +79,8 @@ public class ProdutoDAO {
                 produto.setQuantidade(c.getDouble(c.getColumnIndex(Produto.QUANTIDADE)));
                 produto.setMargem(c.getDouble(c.getColumnIndex(Produto.MARGEM)));
                 //produto.setImage(c.getBlob(c.getColumnIndex(Produto.IMAGE)));
+                produto.setAtivo(c.getInt(c.getColumnIndex(Produto.ATIVO)));
+
                 produtos.add(produto);
             } while (c.moveToNext());
 
@@ -84,7 +88,7 @@ public class ProdutoDAO {
         return produtos;
     }
 
-    public List<Produto> listar(String arg){
+    public List<Produto> listar(String arg, Boolean chkInativo){
         List<Produto> produtos = new java.util.ArrayList<Produto>();
         Cursor c = db.query(Produto.TABELA, Produto.COLUNAS, null, null,null,null,null);
         if(c.moveToFirst()){
@@ -99,9 +103,12 @@ public class ProdutoDAO {
                 produto.setQuantidade(c.getDouble(c.getColumnIndex(Produto.QUANTIDADE)));
                 produto.setMargem(c.getDouble(c.getColumnIndex(Produto.MARGEM)));
                 //produto.setImage(c.getBlob(c.getColumnIndex(Produto.IMAGE)));
+                produto.setAtivo(c.getInt(c.getColumnIndex(Produto.ATIVO)));
 
-                if(produto.toString().indexOf(arg) != -1) {
-                    produtos.add(produto);
+                if(produto.getAtivo() == 1 || chkInativo) {
+                    if (produto.toString().indexOf(arg) != -1) {
+                        produtos.add(produto);
+                    }
                 }
             } while (c.moveToNext());
 
@@ -124,6 +131,7 @@ public class ProdutoDAO {
                 produto.setQuantidade(c.getDouble(c.getColumnIndex(Produto.QUANTIDADE)));
                 produto.setMargem(c.getDouble(c.getColumnIndex(Produto.MARGEM)));
                 //produto.setImage(c.getBlob(c.getColumnIndex(Produto.IMAGE)));
+                produto.setAtivo(c.getInt(c.getColumnIndex(Produto.ATIVO)));
 
                 if (produto.getId() == id){
                     produtos.add(produto);

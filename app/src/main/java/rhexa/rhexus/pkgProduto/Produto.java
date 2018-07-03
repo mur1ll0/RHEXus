@@ -15,6 +15,7 @@ public class Produto{
     private double preco;
     private double margem;
     private Blob image;
+    private int ativo;
 
     public static final String ID = "id";
     public static final String NOME = "nome";
@@ -26,7 +27,8 @@ public class Produto{
     public static final String MARGEM = "margem";
     public static final String IMAGE = "image";
     public static final String TABELA = "produto";
-    public static final String[] COLUNAS = {ID,NOME,DESC,CODIGO,CUSTO,QUANTIDADE,PRECO,MARGEM};
+    public static final String ATIVO = "ativo";
+    public static final String[] COLUNAS = {ID,NOME,DESC,CODIGO,CUSTO,QUANTIDADE,PRECO,MARGEM, ATIVO};
 
     public Long getId() {
         return id;
@@ -99,6 +101,15 @@ public class Produto{
     public void setImage(Blob image) {
         this.image = image;
     }
+
+    public int getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(int ativo) {
+        this.ativo = ativo;
+    }
+
 
     @Override
     public String toString(){

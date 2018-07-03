@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -27,6 +28,7 @@ import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 public class newProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     EditText edtId, edtNome, edtDesc, edtCodigo, edtCusto, edtPreco, edtQuantidade, edtMargem;
+    Switch swAtivo;
     ProdutoDAO produtoDAO;
     private List<Produto> produtos;
 
@@ -42,6 +44,7 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
         edtPreco = (EditText) findViewById(R.id.new_prod_layout_editpreco);
         edtQuantidade = (EditText) findViewById(R.id.new_prod_layout_editqntd);
         edtMargem = (EditText) findViewById(R.id.new_prod_layout_editmargem);
+        swAtivo = (Switch) findViewById(R.id.new_prod_ativosw);
         produtoDAO = new ProdutoDAO(this);
         Produto produto;
 
@@ -85,6 +88,9 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
                 edtPreco.setText(String.valueOf(p.getPreco()));
                 edtQuantidade.setText(String.valueOf(p.getQuantidade()));
                 edtMargem.setText(String.valueOf(p.getMargem()));
+
+                if(p.getAtivo() == 1)swAtivo.setChecked(true);
+                else swAtivo.setChecked(false);
             }
         }
 
@@ -164,6 +170,9 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
             produto.setPreco(Double.parseDouble(edtPreco.getText().toString()));
             produto.setQuantidade(Double.parseDouble(edtQuantidade.getText().toString()));
             produto.setMargem(Double.parseDouble(edtMargem.getText().toString()));
+
+            if(swAtivo.isChecked()) produto.setAtivo(1);
+            else produto.setAtivo(0);
 
             produtoDAO.SalvarOuAlterar(produto);
 

@@ -271,13 +271,33 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_launcher_foreground" />
 
-            <Button
-                android:id="@+id/new_prod_layout_savebt"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="#AAAAAA"
-                android:text="Salvar" />
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:id="@+id/new_prod_layout_savebt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#AAAAAA"
+                    android:text="Salvar" />
+
+                <Switch
+                    android:id="@+id/new_prod_ativosw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Ativo "
+                    android:textSize="24dp"
+                    android:layout_margin="15dp"
+                    />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -67,6 +68,7 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         prodList = findViewById(R.id.prodList);
         produtoDAO = new ProdutoDAO(this);
         final EditText search = (EditText) findViewById(R.id.prod_layout_busca);
+        final CheckBox chkInativo = (CheckBox) findViewById(R.id.prod_layout_ativochk);
 
         produtos = produtoDAO.listar();
         produtosAdapter = new ProdutosAdapter(this, R.layout.produtos_adapter_activity, produtos);
@@ -76,7 +78,7 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 produtosAdapter.clear();
-                produtos = produtoDAO.listar(search.getText().toString());
+                produtos = produtoDAO.listar(search.getText().toString(), chkInativo.isChecked());
                 //produtosAdapter = new ProdutosAdapter(ProdActivity.this, R.layout.produtos_adapter_activity, produtos);
                 //prodList.setAdapter(produtosAdapter);
                 produtosAdapter.addAll(produtos);
@@ -106,10 +108,10 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         produtosAdapter.notifyDataSetChanged();*/
 
         String scanContent = "";
+        EditText search = (EditText) findViewById(R.id.prod_layout_busca);
+        CheckBox chkInativo = (CheckBox) findViewById(R.id.prod_layout_ativochk);
 
         produtosAdapter.clear();
-
-        EditText search = (EditText) findViewById(R.id.prod_layout_busca);
 
         //retrieve scan result
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
@@ -121,7 +123,7 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
             // display it on screen
             search.setText(scanContent);
         }
-        produtos = produtoDAO.listar(scanContent);
+        produtos = produtoDAO.listar(scanContent, chkInativo.isChecked());
         produtosAdapter.addAll(produtos);
     }
 
