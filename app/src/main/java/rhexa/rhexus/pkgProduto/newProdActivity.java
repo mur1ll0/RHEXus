@@ -98,6 +98,35 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
                 integrator.initiateScan();
             }
         });
+
+
+        //Atualizar Preço / Margem
+        edtPreco.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Double margem;
+                if(!hasFocus){
+                    if(!edtCusto.getText().equals("") && !edtPreco.getText().equals("")){
+                        margem = Double.parseDouble(edtPreco.getText().toString()) - Double.parseDouble(edtCusto.getText().toString());
+                        margem = margem / Double.parseDouble(edtCusto.getText().toString()) * 100.0;
+                        edtMargem.setText(String.valueOf(margem));
+                    }
+                }
+            }
+        });
+        edtMargem.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Double preco;
+                if(!hasFocus){
+                    if(!edtCusto.getText().equals("") && !edtMargem.getText().equals("")){
+                        preco = Double.parseDouble(edtCusto.getText().toString());
+                        preco = preco + (preco * Double.parseDouble(edtMargem.getText().toString())/100.0);
+                        edtPreco.setText(String.valueOf(preco));
+                    }
+                }
+            }
+        });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
