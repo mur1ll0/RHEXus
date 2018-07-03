@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -43,10 +44,18 @@ public class PedidoListActivity extends ListActivity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 pedidoListAdapter.clear();
                 pedidos = pedidoDAO.listar(search.getText().toString());
-                //produtosAdapter = new ProdutosAdapter(ProdActivity.this, R.layout.produtos_adapter_activity, produtos);
-                //prodList.setAdapter(produtosAdapter);
                 pedidoListAdapter.addAll(pedidos);
                 return false;
+            }
+        });
+        //Abrir tela Cadastro novos produtos
+        final Button newProd = findViewById(R.id.pedido_layout_btNovo);
+        newProd.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                /*Intent it = new Intent(ProdActivity.this, newProdActivity.class);
+                startActivity(it);
+                drawer.closeDrawer(GravityCompat.START);*/
+                novoCadastroPedido(v);
             }
         });
     }
@@ -82,7 +91,6 @@ public class PedidoListActivity extends ListActivity {
         TextView id = (TextView) v.findViewById(R.id.pedidos_adapter_activity_tvId);
         String message = id.getText().toString();
         it.putExtra(EXTRA_MESSAGE, message);
-
         startActivityForResult(it, 1);
     }
 
@@ -93,3 +101,4 @@ public class PedidoListActivity extends ListActivity {
         startActivityForResult(it,1);
     }
 }
+
