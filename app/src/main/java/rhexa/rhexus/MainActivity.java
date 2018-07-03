@@ -2,7 +2,9 @@ package rhexa.rhexus;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,8 +25,10 @@ import rhexa.rhexus.pkgMovimento.MovimentoListActivity;
 import rhexa.rhexus.pkgPedido.PedidoListActivity;
 import rhexa.rhexus.pkgPedido.newPedidoFinalActivity;
 import rhexa.rhexus.pkgPedido.newPedidoProdActivity;
+import rhexa.rhexus.pkgPessoa.PessoaCadActivity;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 import rhexa.rhexus.pkgProduto.ProdActivity;
+import rhexa.rhexus.pkgProduto.newProdActivity;
 import rhexa.rhexus.pkgTitulo.TituloListActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -49,6 +53,29 @@ public class MainActivity extends AppCompatActivity
             }
 
         });
+
+        //Botoes rápidos
+        ImageView pessoabt = findViewById(R.id.main_peoplebt);
+        ImageView prodbt = findViewById(R.id.main_prodbt);
+        ImageView pedidobt = findViewById(R.id.main_pedidobt);
+
+        pessoabt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, PedidoListActivity.class);
+                startActivity(it);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+        prodbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, ProdActivity.class);
+                startActivity(it);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
 
         //MENU RELATÓRIO RÁPIDO
         final TextView ano = (TextView) findViewById(R.id.ano);

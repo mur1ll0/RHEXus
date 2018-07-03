@@ -8,7 +8,7 @@ public class BancoDados {
     private static final String NOME_BANCO = "trabalho";
 
     // Controle de versao
-    private static final int VERSAO_BANCO = 5; // Mudar a cada nova versão
+    private static final int VERSAO_BANCO = 6; // Mudar a cada nova versão
 
     //Script para fazer drop na tabela
     private static final String[] SCRIPT_DATABASE_DELETE = new String[] {
@@ -25,7 +25,7 @@ public class BancoDados {
             "create table produto (id integer primary key, nome varchar(60), desc varchar(60), codigo varchar(44), custo real, quantidade real, preco real, margem real, image Blob, ativo int);",
             "create table titulo (id integer primary key, tipo text, emissao text, vencimento text, pessoaId integer, valor real, valorBaixa real);",
             "create table movimento (id integer primary key, tipo text, dataMovimentacao text, pedidoProduto integer, produtoId integer, quantidade real, valor real)",
-            "create table pedidos (id integer primary key, situacao text, operacao text, pessoaID integer, emissao text)"};
+            "create table pedido (id integer primary key, situacao text, operacao text, pessoaID integer, emissao text)"};
 
 
     private static SQLiteDatabase db;

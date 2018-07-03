@@ -84,7 +84,7 @@ public class PedidoListActivity extends AppCompatActivity implements NavigationV
         final Button newProd = findViewById(R.id.pedido_layout_btNovo);
         newProd.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                /*Intent it = new Intent(ProdActivity.this, newProdActivity.class);
+                /*Intent it = new Intent(PedidoListActivity.this, newPedidoProdActivity.class);
                 startActivity(it);
                 drawer.closeDrawer(GravityCompat.START);*/
                 novoCadastroPedido(v);
@@ -113,7 +113,7 @@ public class PedidoListActivity extends AppCompatActivity implements NavigationV
     }
 
     public void novoCadastroPedido(View v){
-        Intent it = new Intent(this,newPedidoFinalActivity.class);
+        Intent it = new Intent(this,newPedidoProdActivity.class);
         String message = "";
         it.putExtra(EXTRA_MESSAGE, message);
         startActivityForResult(it,1);
