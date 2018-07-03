@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import rhexa.rhexus.R;
 import rhexa.rhexus.pkgPessoa.Pessoa;
@@ -27,7 +28,12 @@ import rhexa.rhexus.pkgProduto.newProdActivity;
 
 public class newPedidoFinalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    EditText numeroPed,emissao,editCodPessoa,alorProd,edtEndereco,edtTelefone;
+    EditText numeroPed,emissao,editCodPessoa,alorProd,edtEndereco,edtTelefone, edtId, edtNome, edtCPFCNPJ;
+    Spinner spTipo;
+    PessoaDAO pessoaDAO;
+    private String[] tiposDescricao = new String[]{"Física","Jurídica"};
+    private List<Pessoa> pessoas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,5 +131,17 @@ public class newPedidoFinalActivity extends AppCompatActivity implements Navigat
         startActivity(it);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private int getIndex(Spinner spinner, String myString){ // Retorna a posição da spinner conforme o valor do banco
+
+        int index = 0;
+
+        for (int i=0;i<spinner.getCount();i++){
+            if (spinner.getItemAtPosition(i).equals(myString)){
+                index = i;
+            }
+        }
+        return index;
     }
 }
