@@ -26,10 +26,10 @@
             android:name=".pkgProduto.newProdActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".pkgPessoa.PessoaListActivity" />
-        <activity android:name=".PedidoActivity" />
+        <activity android:name=".pkgPedido.PedidoActivity" />
         <activity android:name=".pkgPessoa.PessoaCadActivity" />
-        <activity android:name=".pkgTitulo.TituloListActivity"></activity>
-        <activity android:name=".pkgTitulo.TituloCadActivity"></activity>
+        <activity android:name=".pkgTitulo.TituloListActivity"/>
+        <activity android:name=".pkgTitulo.TituloCadActivity"/>
     </application>
 
 </manifest>

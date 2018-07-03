@@ -19,6 +19,7 @@ import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
 
+import rhexa.rhexus.pkgPedido.PedidoActivity;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 import rhexa.rhexus.pkgProduto.ProdActivity;
 import rhexa.rhexus.pkgTitulo.TituloListActivity;
