@@ -13,14 +13,18 @@ import java.util.List;
 
 import rhexa.rhexus.MainActivity;
 import rhexa.rhexus.R;
+import rhexa.rhexus.pkgPessoa.Pessoa;
+import rhexa.rhexus.pkgPessoa.PessoaDAO;
 
 public class TituloCadActivity extends MainActivity {
 
     EditText edtId,edtEmissao,edtVencimento,edtPessoaId,edtPessoaNome,edtValor,edtValorBaixa;
     Spinner spTipo;
     private String[] tiposDescricao = new String[]{"Débito","Crédito"};
-    TituloDAO tituloDAO;
+    private TituloDAO tituloDAO;
+    private PessoaDAO pessoaDAO;
     private List<Titulo> titulos;
+    private List<Pessoa> pessoas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class TituloCadActivity extends MainActivity {
         spTipo = (Spinner) findViewById(R.id.activity_titulo_cad_spTipo);
 
         tituloDAO = new TituloDAO(this);
+        pessoaDAO = new PessoaDAO(this);
 
         Intent intent = getIntent();
 
@@ -56,8 +61,26 @@ public class TituloCadActivity extends MainActivity {
                 edtPessoaId.setText(String.valueOf(t.getPessoaID()));
                 edtValor.setText(String.valueOf(t.getValor()));
                 edtValorBaixa.setText(String.valueOf(t.getValorBaixa()));
+                edtPessoaNome.setText("");
+                pessoas = pessoaDAO.listar(Integer.valueOf(edtPessoaId.getText().toString()));
+                for (Pessoa p : pessoas){
+                    edtPessoaNome.setText(p.getNome());
+                }
             }
         }
+
+        edtPessoaId.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    pessoas = pessoaDAO.listar(Integer.valueOf(edtPessoaId.getText().toString()));
+                    edtPessoaNome.setText("");
+                    for (Pessoa p : pessoas){
+                        edtPessoaNome.setText(p.getNome());
+                    }
+                }
+            }
+        });
     }
 
     public void salvarCadTitulo(View v){
