@@ -78,9 +78,10 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
-
-
     }
+
+    //Leitor código de barras
+
 
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){

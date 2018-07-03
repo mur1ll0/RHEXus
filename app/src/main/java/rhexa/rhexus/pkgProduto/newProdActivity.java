@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,12 +80,41 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
                 edtId.setText(String.valueOf(p.getId()));
                 edtNome.setText(p.getNome());
                 edtDesc.setText(p.getDesc());
-                edtCodigo.setText(p.getDesc());
+                edtCodigo.setText(p.getCodigo());
                 edtCusto.setText(String.valueOf(p.getCusto()));
                 edtPreco.setText(String.valueOf(p.getPreco()));
                 edtQuantidade.setText(String.valueOf(p.getQuantidade()));
                 edtMargem.setText(String.valueOf(p.getMargem()));
             }
+        }
+
+        //Leitor Código de Barras
+        ImageView scan = (ImageView) findViewById(R.id.new_prod_layout_readbt);
+        scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentIntegrator integrator = new IntentIntegrator(newProdActivity.this);
+                integrator.setOrientationLocked(true);
+                integrator.initiateScan();
+            }
+        });
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        //retrieve scan result
+        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+
+        if (scanningResult != null) {
+            //we have a result
+            String scanContent = scanningResult.getContents();
+            String scanFormat = scanningResult.getFormatName();
+
+            // display it on screen
+            edtCodigo.setText(scanContent);
+
+        }else{
+            Toast toast = Toast.makeText(getApplicationContext(),"No scan data received!", Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
