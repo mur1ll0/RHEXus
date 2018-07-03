@@ -6,34 +6,39 @@
     android:onClick="abrirCadastroTitulo">
 
 
-    <LinearLayout
-        android:layout_width="fill_parent"
+    <GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="start"
+        android:columnCount="3">
 
         <TextView
             android:id="@+id/titulo_list_item_tvTipo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
+
+            android:layout_columnWeight="1"
             android:text="TextView"
             android:textSize="18dp" />
 
         <TextView
             android:id="@+id/titulo_list_Item_tvEmissao"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_columnWeight="1"
+
             android:text="TextView"
             android:textSize="18dp" />
 
         <TextView
             android:id="@+id/titulo_list_item_tvValor"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_columnWeight="1"
+
             android:textSize="18dp" />
-    </LinearLayout>
+    </GridLayout>
 
     <TextView
             android:text="TextView"

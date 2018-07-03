@@ -123,7 +123,7 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
             // display it on screen
             search.setText(scanContent);
         }
-        produtos = produtoDAO.listar(scanContent, chkInativo.isChecked());
+        produtos = produtoDAO.listar(search.getText().toString(), chkInativo.isChecked());
         produtosAdapter.addAll(produtos);
     }
 
