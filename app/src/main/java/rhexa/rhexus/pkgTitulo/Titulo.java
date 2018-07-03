@@ -76,4 +76,9 @@ public class Titulo {
     public void setValorBaixa(float valorBaixa) {
         this.valorBaixa = valorBaixa;
     }
+
+    @Override
+    public String toString() {
+        return id +  tipo + emissao + vencimento + pessoaID + valor + valorBaixa;
+    }
 }

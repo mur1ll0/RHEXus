@@ -4,7 +4,9 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import rhexa.rhexus.R;
@@ -14,6 +16,7 @@ import java.util.List;
 public class TituloListActivity extends ListActivity {
     private TituloDAO tituloDAO;
     private List<Titulo> titulos;
+    private EditText search;
     private TituloListAdapter tituloListAdapter;
 
     public final static String EXTRA_MESSAGE = "";
@@ -23,6 +26,19 @@ public class TituloListActivity extends ListActivity {
         setContentView(R.layout.activity_titulo_list);
 
         tituloDAO = new TituloDAO(this);
+        search = (EditText) findViewById(R.id.activity_titulo_list_edtBuscar);
+
+        search.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                tituloListAdapter.clear();
+                titulos = tituloDAO.listar(search.getText().toString());
+                //produtosAdapter = new ProdutosAdapter(ProdActivity.this, R.layout.produtos_adapter_activity, produtos);
+                //prodList.setAdapter(produtosAdapter);
+                tituloListAdapter.addAll(titulos);
+                return false;
+            }
+        });
 
         titulos = tituloDAO.listar();
         tituloListAdapter = new TituloListAdapter(this,R.layout.activity_titulo_list_item, titulos);
@@ -33,7 +49,20 @@ public class TituloListActivity extends ListActivity {
     protected  void onActivityResult(int requestCode, int resultCode, Intent data    ){
         super.onActivityResult(requestCode,resultCode,data);
         tituloListAdapter.clear();
-        titulos = tituloDAO.listar();
+
+        search = (EditText) findViewById(R.id.activity_titulo_list_edtBuscar);
+
+        search.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                tituloListAdapter.clear();
+                titulos = tituloDAO.listar(search.getText().toString());
+                //produtosAdapter = new ProdutosAdapter(ProdActivity.this, R.layout.produtos_adapter_activity, produtos);
+                //prodList.setAdapter(produtosAdapter);
+                tituloListAdapter.addAll(titulos);
+                return false;
+            }
+        });
 
         tituloListAdapter.addAll(titulos);
         tituloListAdapter.notifyDataSetChanged();

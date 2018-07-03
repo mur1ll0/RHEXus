@@ -85,4 +85,24 @@ public class TituloDAO {
         return titulos;
     }
 
+    public List<Titulo> listar(String arg){
+        List<Titulo> titulos = new ArrayList<>();
+        Cursor c = db.query(Titulo.TABELA,Titulo.COLUNAS,null,null,null,null,null);
+        if (c.moveToFirst()){
+            do {
+                Titulo titulo = new Titulo();
+                titulo.setId(c.getLong(c.getColumnIndex(Titulo.ID)));
+                titulo.setEmissao(c.getString(c.getColumnIndex(Titulo.EMISSAO)));
+                titulo.setPessoaID(c.getLong(c.getColumnIndex(Titulo.PESSOAID)));
+                titulo.setTipo(c.getString(c.getColumnIndex(Titulo.TIPO)));
+                titulo.setValor(c.getFloat(c.getColumnIndex(Titulo.VALOR)));
+                titulo.setValorBaixa(c.getFloat(c.getColumnIndex(Titulo.VALORBAIXA)));
+                titulo.setVencimento(c.getString(c.getColumnIndex(Titulo.VENCIMENTO)));
+                if (titulo.toString().contains(arg))
+                    titulos.add(titulo);
+            } while (c.moveToNext());
+        }
+        return titulos;
+    }
+
 }
