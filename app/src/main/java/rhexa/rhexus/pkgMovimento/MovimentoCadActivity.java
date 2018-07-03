@@ -16,15 +16,19 @@ import rhexa.rhexus.R;
 import rhexa.rhexus.pkgPessoa.Pessoa;
 import rhexa.rhexus.pkgPessoa.PessoaDAO;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
+import rhexa.rhexus.pkgProduto.Produto;
+import rhexa.rhexus.pkgProduto.ProdutoDAO;
 
 public class MovimentoCadActivity extends AppCompatActivity {
 
 
-    EditText edtId,edtData,edtProdutoId,edtQuantidade,edtValor;
+    EditText edtId,edtData,edtProdutoId,edtQuantidade,edtValor,edtProdutoNome;
     Spinner spTipo;
     private String[] tiposDescricao = new String[]{"Entrada","Saída"};
     MovimentoDAO movimentoDAO;
+    ProdutoDAO produtoDAO;
     private List<Movimento> movimentos;
+    private List<Produto> produtos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class MovimentoCadActivity extends AppCompatActivity {
         edtId = (EditText) findViewById(R.id.activity_movimento_cad_edtId);
         edtData = (EditText) findViewById(R.id.activity_movimento_cad_edtData);
         edtProdutoId = (EditText) findViewById(R.id.activity_movimento_cad_edtProdutoId);
+        edtProdutoNome = (EditText) findViewById(R.id.activity_movimento_cad_edtProdutoNome);
         edtQuantidade = (EditText) findViewById(R.id.activity_movimento_cad_edtQuantidade);
         spTipo = (Spinner) findViewById(R.id.activity_movimento_cad_spTipo);
         edtValor = (EditText) findViewById(R.id.activity_movimento_cad_edtValor);
@@ -56,8 +61,28 @@ public class MovimentoCadActivity extends AppCompatActivity {
                 spTipo.setSelection(getIndex(spTipo,m.getTipo()));
                 edtQuantidade.setText(String.valueOf(m.getQuantidade()));
                 edtValor.setText(String.valueOf(m.getValor()));
+                produtos = produtoDAO.listar(Integer.valueOf(edtProdutoId.getText().toString()));
+                edtProdutoNome.setText("");
+                for (Produto p : produtos){
+                    edtProdutoNome.setText(p.getNome());
+                    edtValor.setText(String.valueOf(p.getPreco()));
+                }
             }
         }
+
+        edtProdutoId.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    produtos = produtoDAO.listar(Integer.valueOf(edtProdutoId.getText().toString()));
+                    edtProdutoNome.setText("");
+                    for (Produto p : produtos){
+                        edtProdutoNome.setText(p.getNome());
+                        edtValor.setText(String.valueOf(p.getPreco()));
+                    }
+                }
+            }
+        });
     }
 
     public void salvarCadMovimento(View v){
