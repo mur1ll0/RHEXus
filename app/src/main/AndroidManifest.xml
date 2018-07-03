@@ -32,6 +32,8 @@
         <activity android:name=".pkgPessoa.PessoaCadActivity" />
         <activity android:name=".pkgTitulo.TituloListActivity"/>
         <activity android:name=".pkgTitulo.TituloCadActivity"/>
+        <activity android:name=".pkgMovimento.MovimentoCadActivity"/>
+        <activity android:name=".pkgMovimento.MovimentoListActivity"/>
     </application>
 
 </manifest>
