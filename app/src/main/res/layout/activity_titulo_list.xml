@@ -13,9 +13,10 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/activity_titulo_list_lvTitulos"
+            android:id="@android:id/list"
             android:layout_width="fill_parent"
             android:layout_height="228dp"
+            android:layout_above="@+id/activity_titulo_list_lvTitulos"
             android:layout_weight="0.97" />
         <Button
             android:layout_width="wrap_content"

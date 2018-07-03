@@ -19,6 +19,10 @@
         <item
             android:id="@+id/nav_titulo"
             android:title="Títulos"/>
+
+        <item
+            android:id="@+id/nav_movimentos"
+            android:title="Movimentos"/>
     </group>
 
     <item android:title="Avançado">

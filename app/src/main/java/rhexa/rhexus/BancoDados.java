@@ -8,20 +8,22 @@ public class BancoDados {
     private static final String NOME_BANCO = "trabalho";
 
     // Controle de versao
-    private static final int VERSAO_BANCO = 3; // Mudar a cada nova versão
+    private static final int VERSAO_BANCO = 4; // Mudar a cada nova versão
 
     //Script para fazer drop na tabela
     private static final String[] SCRIPT_DATABASE_DELETE = new String[] {
             "DROP TABLE IF EXISTS pessoa;",
             "DROP TABLE IF EXISTS produto;",
-            "DROP TABLE IF EXISTS titulo;"
+            "DROP TABLE IF EXISTS titulo;",
+            "DROP TABLE IF EXISTS movimento"
     };
 
     // Cria a tabela com o "_id" sequencial
     private static final String[] SCRIPT_DATABASE_CREATE = new String[] { // Criar campos conforme necessidade
             "create table pessoa (id integer primary key,nome varchar(60), tipo varchar(10), cpfcnpj varchar(20), endereco varchar(100), telefone varchar(20));",
             "create table produto (id integer primary key, nome varchar(60), desc varchar(60), codigo varchar(44), custo real, quantidade real, preco real, margem real, image Blob, ativo int);",
-            "create table titulo (id integer primary key, tipo text, emissao text, vencimento text, pessoaId integer, valor real, valorBaixa real);"};
+            "create table titulo (id integer primary key, tipo text, emissao text, vencimento text, pessoaId integer, valor real, valorBaixa real);",
+            "create table movimento (id integet primary key, tipo text, dataMovimentacao text, pedidoProduto integer, produtoId integer, quantidade real, valor real)"};
 
 
     private static SQLiteDatabase db;

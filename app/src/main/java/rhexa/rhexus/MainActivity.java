@@ -19,6 +19,7 @@ import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
 
+import rhexa.rhexus.pkgMovimento.MovimentoListActivity;
 import rhexa.rhexus.pkgPedido.PedidoActivity;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 import rhexa.rhexus.pkgProduto.ProdActivity;
@@ -115,8 +116,10 @@ public class MainActivity extends AppCompatActivity
             it = new Intent(this, PessoaListActivity.class);
         } else if (id == R.id.nav_pedido) {
             it = new Intent(this, PedidoActivity.class);
-        } else if (id == R.id.nav_titulo){
+        } else if (id == R.id.nav_titulo) {
             it = new Intent(this, TituloListActivity.class);
+        } else if (id == R.id.nav_movimentos) {
+            it = new Intent( this, MovimentoListActivity.class);
         } else if (id == R.id.nav_opt) {
 
         } else if (id == R.id.nav_share) {

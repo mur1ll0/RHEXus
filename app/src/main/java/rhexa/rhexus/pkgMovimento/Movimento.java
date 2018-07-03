@@ -6,13 +6,15 @@ public class Movimento {
     private String tipo;
     private String dataMovimentacao;
     private Long produtoId;
+    private Long pedidoProduto;
     private Float quantidade;
     private Float valor;
 
     public static final String ID = "id";
     public static final String TIPO = "tipo";
     public static final String DATAMOVIMENTACAO = "dataMovimentacao";
-    public static final String PRODUTOID = "pedidoProduto";
+    public static final String PRODUTOID = "produtoId";
+    public static final String PEDIDOPRODUTO = "pedidoProduto";
     public static final String QUANTIDADE = "quantidade";
     public static final String VALOR = "valor";
     public static final String TABELA = "movimento";
@@ -66,5 +68,13 @@ public class Movimento {
 
     public void setValor(Float valor) {
         this.valor = valor;
+    }
+
+    public Long getPedidoProduto() {
+        return pedidoProduto;
+    }
+
+    public void setPedidoProduto(Long pedidoProduto) {
+        this.pedidoProduto = pedidoProduto;
     }
 }
