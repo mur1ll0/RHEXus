@@ -53,6 +53,7 @@
             android:columnCount="3">
 
             <ImageView
+                android:id="@+id/main_peoplebt"
                 android:layout_width="0dp"
                 android:layout_column="0"
                 android:layout_columnWeight="1"
@@ -63,6 +64,7 @@
                 android:src="@drawable/bt_people" />
 
             <ImageView
+                android:id="@+id/main_prodbt"
                 android:layout_width="0dp"
                 android:layout_column="1"
                 android:layout_columnWeight="1"
@@ -73,6 +75,7 @@
                 android:src="@drawable/bt_item" />
 
             <ImageView
+                android:id="@+id/main_pedidobt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
