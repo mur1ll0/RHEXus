@@ -89,12 +89,11 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
         }
 
         //Leitor Código de Barras
-        ImageView scan = (ImageView) findViewById(R.id.new_prod_layout_readbt);
-        scan.setOnClickListener(new View.OnClickListener() {
+        ImageView scanNewProd = (ImageView) findViewById(R.id.new_prod_layout_readbt);
+        scanNewProd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 IntentIntegrator integrator = new IntentIntegrator(newProdActivity.this);
-                integrator.setOrientationLocked(true);
                 integrator.initiateScan();
             }
         });
@@ -129,6 +128,7 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
         });
     }
 
+    //Resultado do leitor de código de barras
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         //retrieve scan result
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
@@ -136,7 +136,6 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
         if (scanningResult != null) {
             //we have a result
             String scanContent = scanningResult.getContents();
-            String scanFormat = scanningResult.getFormatName();
 
             // display it on screen
             edtCodigo.setText(scanContent);

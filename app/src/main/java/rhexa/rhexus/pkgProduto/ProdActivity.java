@@ -15,6 +15,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.util.List;
 
@@ -73,24 +77,52 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 produtosAdapter.clear();
                 produtos = produtoDAO.listar(search.getText().toString());
-                produtosAdapter = new ProdutosAdapter(ProdActivity.this, R.layout.produtos_adapter_activity, produtos);
-                prodList.setAdapter(produtosAdapter);
+                //produtosAdapter = new ProdutosAdapter(ProdActivity.this, R.layout.produtos_adapter_activity, produtos);
+                //prodList.setAdapter(produtosAdapter);
+                produtosAdapter.addAll(produtos);
                 return false;
             }
         });
+
+        //Leitor Código de Barras
+        ImageView scanProd = (ImageView) findViewById(R.id.prod_layout_readbt);
+        scanProd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentIntegrator integrator = new IntentIntegrator(ProdActivity.this);
+                integrator.initiateScan();
+            }
+        });
+
     }
-
-    //Leitor código de barras
-
 
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
+        /*super.onActivityResult(requestCode, resultCode, data);
         produtosAdapter.clear();
         produtos = produtoDAO.listar();
 
         produtosAdapter.addAll(produtos);
-        produtosAdapter.notifyDataSetChanged();
+        produtosAdapter.notifyDataSetChanged();*/
+
+        String scanContent = "";
+
+        produtosAdapter.clear();
+
+        EditText search = (EditText) findViewById(R.id.prod_layout_busca);
+
+        //retrieve scan result
+        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+
+        if (scanningResult != null) {
+            //we have a result
+            scanContent = scanningResult.getContents();
+
+            // display it on screen
+            search.setText(scanContent);
+        }
+        produtos = produtoDAO.listar(scanContent);
+        produtosAdapter.addAll(produtos);
     }
 
     public void abrirCadastroProduto(View v){

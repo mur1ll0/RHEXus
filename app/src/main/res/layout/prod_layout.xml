@@ -52,7 +52,7 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
+            android:columnCount="3"
             >
 
             <EditText
@@ -64,6 +64,16 @@
                 android:layout_columnWeight="1"
                 android:hint="Buscar"
                 android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/prod_layout_readbt"
+                android:src="@drawable/ic_menu_camera"
+                android:layout_width="0dp"
+                android:layout_columnWeight="0.16"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitCenter"
+                android:layout_height="50dp"
+                />
 
             <Button
                 android:id="@+id/prod_layout_novobt"
