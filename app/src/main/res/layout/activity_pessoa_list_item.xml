@@ -4,21 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:onClick="abrirCadastroPessoa">
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="right">
+        android:orientation="vertical"
+        android:background="#BBBBBB"
+        android:layout_gravity="bottom">
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/pessoa_list_item_tvNome"
             android:layout_width="220dp"
             android:layout_height="25dp"
-            android:textSize="18dp"
-            android:id="@+id/pessoa_list_item_tvNome"
-            />
-    </RelativeLayout>
+            android:text="Nome"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:text="Endereco"
+            android:id="@+id/pessoa_list_item_tvEndereco"/>
+    </LinearLayout>
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"

@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/soft_grey_background"
+
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".pkgPessoa.PessoaCadActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginStart="5dp">
+
 
         <GridLayout
             android:layout_width="match_parent"
@@ -47,48 +49,99 @@
                 />
 
         </GridLayout>
-        <EditText
-            android:id="@+id/activity_pessoa_cad_edtId"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:enabled="false"
-            android:visibility="invisible"
-            android:inputType="textPersonName"
-            android:hint="Código" />
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:columnCount="2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Código: "/>
+            <EditText
+                android:id="@+id/activity_pessoa_cad_edtId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:hint="" />
+        </GridLayout>
 
-        <EditText
-            android:id="@+id/activity_pessoa_cad_edtNome"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPersonName"
-            android:hint="Nome"/>
-
-        <Spinner
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/activity_pessoa_cad_spTipo">
-
-        </Spinner>
-
-        <EditText
-            android:id="@+id/activity_pessoa_cad_edtCPFCNPJ"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome "/>
+            <EditText
+                android:id="@+id/activity_pessoa_cad_edtNome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:hint=""/>
+        </GridLayout>
+        <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Numero Documento"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Natureza: "/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_pessoa_cad_spTipo">
 
-        <EditText
-            android:id="@+id/activity_pessoa_cad_edtEndereco"
+            </Spinner>
+        </GridLayout>
+        <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Endereço"
-            android:inputType="text"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CPF/CNPJ: "/>
+            <EditText
+                android:id="@+id/activity_pessoa_cad_edtCPFCNPJ"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint=""/>
+        </GridLayout>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Endereço: "/>
+            <EditText
+                android:id="@+id/activity_pessoa_cad_edtEndereco"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint=""
+                android:inputType="text"/>
+        </GridLayout>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telefone: "/>
+            <EditText
+                android:id="@+id/activity_pessoa_cad_edtTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint=""
 
-        <EditText
-            android:id="@+id/activity_pessoa_cad_edtTelefone"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Telefone"
-            android:inputType="phone"/>
+                android:inputType="phone"/>
+        </GridLayout>
 
 
 

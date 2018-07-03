@@ -89,4 +89,25 @@ public class PessoaDAO {
         return pessoas;
     }
 
+    public List<Pessoa> listar(String arg){
+        List<Pessoa> pessoas = new java.util.ArrayList<Pessoa>();
+        Cursor c = db.query(Pessoa.TABELA, Pessoa.COLUNAS, null, null,null,null,null);
+        if(c.moveToFirst()){
+            do {
+                Pessoa pessoa = new Pessoa();
+                pessoa.setId(c.getLong(c.getColumnIndex(Pessoa.ID)));
+                pessoa.setNome(c.getString(c.getColumnIndex(Pessoa.NOME)));
+                pessoa.setTipo(c.getString(c.getColumnIndex(Pessoa.TIPO)));
+                pessoa.setCpfcnpj(c.getString(c.getColumnIndex(Pessoa.CPFCNPJ)));
+                pessoa.setEndereco(c.getString(c.getColumnIndex(Pessoa.ENDERECO)));
+                pessoa.setTelefone(c.getString(c.getColumnIndex(Pessoa.TELEFONE)));
+                if (pessoa.toString().contains(arg)){
+                    pessoas.add(pessoa);
+                }
+            } while (c.moveToNext());
+
+        }
+        return pessoas;
+    }
+
 }

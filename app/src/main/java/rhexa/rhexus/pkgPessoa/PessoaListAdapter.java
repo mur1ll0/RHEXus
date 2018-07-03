@@ -16,7 +16,7 @@ public class PessoaListAdapter extends ArrayAdapter<Pessoa>{
     Context context;
     List<Pessoa> pessoas;
     int layout;
-    TextView tvId, tvNome;
+    TextView tvId, tvNome, tvEndereco;
 
     public PessoaListAdapter(Context context, int layout, List<Pessoa> pessoas){
         super(context, layout, pessoas);
@@ -31,11 +31,13 @@ public class PessoaListAdapter extends ArrayAdapter<Pessoa>{
 
         tvId = (TextView) v.findViewById(R.id.pessoa_list_item_tvId);
         tvNome = v.findViewById(R.id.pessoa_list_item_tvNome);
+        tvEndereco = v.findViewById(R.id.pessoa_list_item_tvEndereco);
 
         Pessoa pessoa = pessoas.get(position);
 
         tvId.setText(String.valueOf(pessoa.getId()));
         tvNome.setText(pessoa.getNome());
+        tvEndereco.setText(pessoa.getEndereco());
         return v;
     }
 
