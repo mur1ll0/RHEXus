@@ -10,16 +10,24 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import rhexa.rhexus.R;
+import rhexa.rhexus.pkgPessoa.Pessoa;
+import rhexa.rhexus.pkgPessoa.PessoaDAO;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 import rhexa.rhexus.pkgProduto.newProdActivity;
 
 public class newPedidoFinalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    EditText numeroPed,emissao,editCodPessoa,alorProd,edtEndereco,edtTelefone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +65,41 @@ public class newPedidoFinalActivity extends AppCompatActivity implements Navigat
 
             }
         });
+
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pessoa_cad);
+        edtId = (EditText) findViewById(R.id.activity_pessoa_cad_edtId);
+        edtNome = (EditText) findViewById(R.id.activity_pessoa_cad_edtNome);
+        edtCPFCNPJ = (EditText) findViewById(R.id.activity_pessoa_cad_edtCPFCNPJ);
+        edtEndereco = (EditText) findViewById(R.id.activity_pessoa_cad_edtEndereco);
+        spTipo = (Spinner) findViewById(R.id.activity_pessoa_cad_spTipo);
+        edtTelefone = (EditText) findViewById(R.id.activity_pessoa_cad_edtTelefone);
+        pessoaDAO = new PessoaDAO(this);
+        Intent intent = getIntent();
+        Pessoa pessoa;
+        String message = intent.getStringExtra(PessoaListActivity.EXTRA_MESSAGE);
+
+
+        ArrayAdapter<String> aptPessoaTipo = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, tiposDescricao);
+        spTipo.setAdapter(aptPessoaTipo);
+
+        if (message.length() > 0){
+            pessoas = new ArrayList<Pessoa>();
+            pessoas = pessoaDAO.listar(Integer.valueOf(message));
+
+            for (Pessoa p : pessoas){
+                edtId.setText(String.valueOf(p.getId()));
+                edtNome.setText(p.getNome());
+                edtTelefone.setText(p.getTelefone());
+                spTipo.setSelection(getIndex(spTipo,p.getTipo()));
+                edtEndereco.setText(p.getEndereco());
+                edtCPFCNPJ.setText(p.getCpfcnpj());
+            }
+        }
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

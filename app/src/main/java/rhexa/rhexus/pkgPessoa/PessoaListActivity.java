@@ -46,8 +46,6 @@ public class PessoaListActivity extends ListActivity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 pessoaListAdapter.clear();
                 pessoas = pessoaDAO.listar(search.getText().toString());
-                //produtosAdapter = new ProdutosAdapter(ProdActivity.this, R.layout.produtos_adapter_activity, produtos);
-                //prodList.setAdapter(produtosAdapter);
                 pessoaListAdapter.addAll(pessoas);
                 return false;
             }
@@ -85,7 +83,6 @@ public class PessoaListActivity extends ListActivity {
         TextView id = (TextView) v.findViewById(R.id.pessoa_list_item_tvId);
         String message = id.getText().toString();
         it.putExtra(EXTRA_MESSAGE, message);
-
         startActivityForResult(it, 1);
     }
 

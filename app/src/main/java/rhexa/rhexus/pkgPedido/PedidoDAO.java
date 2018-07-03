@@ -78,4 +78,22 @@ public class PedidoDAO {
         return pedidos;
     }
 
+    public List<Pedido> listar(String arg){
+        List<Pedido> pedidos = new ArrayList<>();
+        Cursor c = db.query(Pedido.TABELA,Pedido.COLUNAS,null,null,null,null,null);
+        if (c.moveToFirst()){
+            do {
+                Pedido pedido = new Pedido();
+                pedido.setId(c.getLong(c.getColumnIndex(Pedido.ID)));
+                pedido.setSituacao(c.getString(c.getColumnIndex(Pedido.SITUACAO)));
+                pedido.setOperacao(c.getString(c.getColumnIndex(Pedido.OPERACAO)));
+                pedido.setPessoaID(c.getLong(c.getColumnIndex(Pedido.PESSOAID)));
+                pedido.setEmissao(c.getString(c.getColumnIndex(Pedido.EMISSAO)));
+                if (pedido.toString().contains(arg))
+                    pedidos.add(pedido);
+            } while (c.moveToNext());
+        }
+        return pedidos;
+    }
+
 }

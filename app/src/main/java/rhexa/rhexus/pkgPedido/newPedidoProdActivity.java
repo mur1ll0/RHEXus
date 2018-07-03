@@ -40,7 +40,9 @@ public class newPedidoProdActivity extends AppCompatActivity implements Navigati
 
         });
 
-        final TextView produtos = (TextView) findViewById(R.id.pedido_produtos);
+
+
+    /*    final TextView produtos = (TextView) findViewById(R.id.pedido_produtos);
         final TextView finalizar = (TextView) findViewById(R.id.pedido_finalizar);
 
         produtos.setOnClickListener(new View.OnClickListener(){
@@ -56,7 +58,7 @@ public class newPedidoProdActivity extends AppCompatActivity implements Navigati
                 finalizar.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
 
             }
-        });
+        });*/
     }
 
     @Override
