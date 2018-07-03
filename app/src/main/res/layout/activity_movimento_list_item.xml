@@ -2,27 +2,50 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:onClick="abrirCadastroMovimento">
 
 
-    <TextView
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="start"
+        android:columnCount="3">
+
+        <TextView
+            android:id="@+id/movimento_list_item_tvTipo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_columnWeight="1"
+            android:text="TextView"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/movimento_list_item_tvData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+
+            android:text="TextView"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/movimento_list_item_tvValor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+
+            android:textSize="18dp" />
+    </GridLayout>
+    <TextView
         android:id="@+id/movimento_list_item_tvId"
-        android:visibility="invisible"/>
-
-    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:id="@+id/movimento_list_item_tvData"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/movimento_list_item_tvValor"
-        android:layout_gravity="end"/>
-
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_columnWeight="1"
+        android:text="TextView"
+        android:textSize="18dp" />
 
 </LinearLayout>

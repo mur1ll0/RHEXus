@@ -42,7 +42,7 @@ public class MovimentoListActivity extends ListActivity {
     }
 
     public void abrirCadastroMovimento(View v){
-        Intent it = new Intent(this, PessoaCadActivity.class);
+        Intent it = new Intent(this, MovimentoCadActivity.class);
 
         TextView id = (TextView) v.findViewById(R.id.movimento_list_item_tvId);
         String message = id.getText().toString();

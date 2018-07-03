@@ -16,7 +16,7 @@ public class MovimentoListAdapter extends ArrayAdapter<Movimento> {
     Context context;
     List<Movimento> movimentos;
     int layout;
-    TextView tvId, tvData, tvValor;
+    TextView tvId, tvData, tvValor, tvTipo;
 
     public MovimentoListAdapter(Context context, int layout, List<Movimento> movimentos){
         super(context, layout, movimentos);
@@ -30,6 +30,7 @@ public class MovimentoListAdapter extends ArrayAdapter<Movimento> {
         View v = inflater.inflate(layout, null);
 
         tvId = (TextView) v.findViewById(R.id.movimento_list_item_tvId);
+        tvTipo = (TextView) v.findViewById(R.id.movimento_list_item_tvTipo);
         tvData = (TextView) v.findViewById(R.id.movimento_list_item_tvData);
         tvValor = v.findViewById(R.id.movimento_list_item_tvValor);
 
@@ -38,6 +39,7 @@ public class MovimentoListAdapter extends ArrayAdapter<Movimento> {
         tvId.setText(String.valueOf(movimento.getId()));
         tvData.setText(movimento.getDataMovimentacao());
         tvValor.setText(String.valueOf(movimento.getValor()));
+        tvTipo.setText(movimento.getTipo());
         return v;
     }
 }

@@ -42,6 +42,7 @@ public class MovimentoCadActivity extends AppCompatActivity {
         spTipo = (Spinner) findViewById(R.id.activity_movimento_cad_spTipo);
         edtValor = (EditText) findViewById(R.id.activity_movimento_cad_edtValor);
         movimentoDAO = new MovimentoDAO(this);
+        produtoDAO = new ProdutoDAO(this);
         Intent intent = getIntent();
         Movimento movimento;
         String message = intent.getStringExtra(PessoaListActivity.EXTRA_MESSAGE);
