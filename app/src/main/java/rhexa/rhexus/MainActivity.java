@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import rhexa.rhexus.pkgMovimento.MovimentoListActivity;
 import rhexa.rhexus.pkgPedido.PedidoListActivity;
+import rhexa.rhexus.pkgPedido.newPedidoFinalActivity;
 import rhexa.rhexus.pkgPedido.newPedidoProdActivity;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 import rhexa.rhexus.pkgProduto.ProdActivity;

@@ -79,7 +79,7 @@
         </GridLayout>
 
         <ListView
-            android:id="@android:id/list"
+            android:id="@+id/pedido_list"
             android:layout_width="fill_parent"
             android:layout_height="525dp"
             android:layout_marginBottom="5dp"

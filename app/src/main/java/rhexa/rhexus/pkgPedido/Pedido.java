@@ -9,7 +9,7 @@ public class Pedido {
 
     public static final String ID = "id";
     public static final String SITUACAO = "situacao";
-    public static final String OPERACAO = "operaca";
+    public static final String OPERACAO = "operacao";
     public static final String PESSOAID = "pessoaId";
     public static final String EMISSAO = "emissao";
     public static final String TABELA = "pedido";

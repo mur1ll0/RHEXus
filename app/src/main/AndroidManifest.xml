@@ -27,6 +27,9 @@
         <activity
             android:name=".pkgProduto.newProdActivity"
             android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".pkgPedido.PedidoListActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".pkgPessoa.PessoaListActivity" />
         <activity android:name=".pkgPedido.newPedidoProdActivity" />
         <activity android:name=".pkgPedido.newPedidoFinalActivity" />
