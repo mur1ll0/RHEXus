@@ -24,7 +24,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.List;
 
 import rhexa.rhexus.R;
-import rhexa.rhexus.pkgPedido.newPedidoActivity;
+import rhexa.rhexus.pkgPedido.PedidoListActivity;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 
 public class ProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -159,7 +159,7 @@ public class ProdActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_people) {
             it = new Intent(this, PessoaListActivity.class);
         } else if (id == R.id.nav_pedido) {
-            it = new Intent(this, newPedidoActivity.class);
+            it = new Intent(this, PedidoListActivity.class);
         } else if (id == R.id.nav_opt) {
 
         } else if (id == R.id.nav_share) {

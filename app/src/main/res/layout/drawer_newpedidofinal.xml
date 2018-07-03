@@ -9,7 +9,7 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/new_pedido_layout"
+        layout="@layout/new_pedido_final_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

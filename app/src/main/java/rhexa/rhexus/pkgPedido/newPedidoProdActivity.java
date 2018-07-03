@@ -18,7 +18,7 @@ import rhexa.rhexus.R;
 import rhexa.rhexus.pkgPessoa.PessoaListActivity;
 import rhexa.rhexus.pkgProduto.newProdActivity;
 
-public class newPedidoActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class newPedidoProdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

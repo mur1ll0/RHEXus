@@ -28,7 +28,8 @@
             android:name=".pkgProduto.newProdActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".pkgPessoa.PessoaListActivity" />
-        <activity android:name=".pkgPedido.PedidoActivity" />
+        <activity android:name=".pkgPedido.newPedidoProdActivity" />
+        <activity android:name=".pkgPedido.newPedidoFinalActivity" />
         <activity android:name=".pkgPessoa.PessoaCadActivity" />
         <activity android:name=".pkgTitulo.TituloListActivity"/>
         <activity android:name=".pkgTitulo.TituloCadActivity"/>

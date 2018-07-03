@@ -5,48 +5,129 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/soft_grey_background"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="rhexa.rhexus.pkgPedido.newPedidoFinalActivity">
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:columnCount="2">
+
+                <ImageView
+                    android:id="@+id/nav_menu"
+                    android:layout_width="0dp"
+                    android:layout_column="0"
+                    android:layout_columnWeight="0.16"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bt_op" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="15dp"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:scaleType="fitCenter"
+                    android:text="PEDIDOS"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:textSize="50sp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+            <TextView
+                android:id="@+id/pedido_produtos"
+                android:text="PRODUTOS"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#BBBBBB"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:padding="10dp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/pedido_finalizar"
+                android:text="FINALIZAR"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#BBBBBB"
+                android:background="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1.2"
+                android:padding="10dp"
+                android:textAlignment="center"
+                />
+
+        </GridLayout>
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2">
+            android:columnCount="2" >
 
             <TextView
                 android:layout_width="108dp"
                 android:layout_height="wrap_content"
-                android:text="Pedido:"
+                android:text="Pedido: "
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/new_pedido_layout_numeroPed"
+            <EditText
+                android:id="@+id/new_pedido_final_numeroPed"
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
-                android:text="123456789"
+                android:hint="123456789"
+                android:inputType="number"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
             <TextView
                 android:layout_width="108dp"
                 android:layout_height="wrap_content"
-                android:text="Emissao:"
+                android:text="Emissao: "
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/new_pedido_layout_emissao"
+            <EditText
+                android:id="@+id/new_pedido_final_emissao"
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
-                android:text="12/34/5678"
+                android:hint="12/34/5678"
+                android:inputType="date"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -54,13 +135,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_columnSpan="2"
-                android:text="Cliente:"
+                android:text="Cliente"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/new_pedido_layout_editCodPessoa"
+                android:id="@+id/new_pedido_final_editCodPessoa"
                 android:layout_height="wrap_content"
                 android:ems="5"
                 android:hint="00000"
@@ -69,7 +150,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/new_prod_pedido_editCliente"
+                android:id="@+id/new_prod_pedido_editPessoa"
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
                 android:hint="Nome da pessoa"
@@ -77,16 +158,33 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="108dp"
                 android:layout_height="wrap_content"
-                android:layout_columnSpan="2"
-                android:text="Desconto:"
+                android:text="Valor Produtos:"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/new_prod_layout_editmargem"
+                android:id="@+id/new_pedido_valorProd"
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:hint="R$"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="2"
+                android:text="Desconto"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/new_prod_layout_editDescP"
                 android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:hint="%"
@@ -95,9 +193,45 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/new_pedido_layout_editDesc"
+                android:id="@+id/new_pedido_final_editDescV"
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
+                android:hint="R$"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:text="Parcelas: "
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/new_pedido_final_parcelas"
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:hint="000"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="2"
+                android:text="Valor Final "
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/new_pedido_final_valorFinal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="2"
                 android:hint="R$"
                 android:inputType="numberDecimal"
                 android:textAlignment="center"
@@ -106,12 +240,12 @@
         </GridLayout>
 
         <Button
-            android:id="@+id/new_pedido_layout_savebt"
+            android:id="@+id/new_pedido_final_finalbt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="#AAAAAA"
-            android:text="Salvar" />
+            android:text="Finalizar" />
 
     </LinearLayout>
 
