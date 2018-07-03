@@ -11,9 +11,10 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 
+import rhexa.rhexus.MainActivity;
 import rhexa.rhexus.R;
 
-public class TituloCadActivity extends AppCompatActivity {
+public class TituloCadActivity extends MainActivity {
 
     EditText edtId,edtEmissao,edtVencimento,edtPessoaId,edtPessoaNome,edtValor,edtValorBaixa;
     Spinner spTipo;
@@ -25,7 +26,7 @@ public class TituloCadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_titulo_cad);
-        edtId = (EditText) findViewById(R.id.activity_pessoa_cad_edtId);
+        edtId = (EditText) findViewById(R.id.activity_titulo_cad_edtId);
         edtEmissao = (EditText) findViewById(R.id.activity_titulo_cad_edtEmissao);
         edtVencimento = (EditText) findViewById(R.id.activity_titulo_cad_edtVencimento);
         edtPessoaId = (EditText) findViewById(R.id.activity_titulo_cad_edtPessoaId);
@@ -67,6 +68,14 @@ public class TituloCadActivity extends AppCompatActivity {
         }else {
             titulo.setId(Long.valueOf("0"));
         }
+
+        if (edtPessoaId.getText().toString().length() == 0)
+            edtPessoaId.setText("0");
+        if (edtValor.getText().toString().length() == 0)
+            edtValor.setText("0.00");
+        if (edtValorBaixa.getText().toString().length() == 0)
+            edtValorBaixa.setText("0.00");
+
 
         titulo.setEmissao(edtEmissao.getText().toString());
         titulo.setPessoaID(Long.valueOf(edtPessoaId.getText().toString()));
