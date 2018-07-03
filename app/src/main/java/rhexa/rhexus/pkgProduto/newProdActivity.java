@@ -166,10 +166,18 @@ public class newProdActivity extends AppCompatActivity implements NavigationView
             produto.setNome(edtNome.getText().toString());
             produto.setDesc(edtDesc.getText().toString());
             produto.setCodigo(edtCodigo.getText().toString());
-            produto.setCusto(Double.parseDouble(edtCusto.getText().toString()));
-            produto.setPreco(Double.parseDouble(edtPreco.getText().toString()));
-            produto.setQuantidade(Double.parseDouble(edtQuantidade.getText().toString()));
-            produto.setMargem(Double.parseDouble(edtMargem.getText().toString()));
+
+            if(edtCusto.getText().toString() == "") produto.setCusto(0);
+            else produto.setCusto(Double.parseDouble(edtCusto.getText().toString()));
+
+            if(edtPreco.getText().toString() == "") produto.setPreco(0);
+            else produto.setPreco(Double.parseDouble(edtPreco.getText().toString()));
+
+            if(edtQuantidade.getText().toString() == "") produto.setQuantidade(0);
+            else produto.setQuantidade(Double.parseDouble(edtQuantidade.getText().toString()));
+
+            if(edtMargem.getText().toString() == "") produto.setMargem(0);
+            else produto.setMargem(Double.parseDouble(edtMargem.getText().toString()));
 
             if(swAtivo.isChecked()) produto.setAtivo(1);
             else produto.setAtivo(0);

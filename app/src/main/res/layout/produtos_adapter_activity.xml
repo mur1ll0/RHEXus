@@ -12,6 +12,8 @@
         android:orientation="horizontal"
         android:layout_gravity="right"
         android:background="#BBBBBB"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         >
 
         <LinearLayout
@@ -23,19 +25,33 @@
 
             <TextView
                 android:text="Nome"
-                android:layout_width="220dp"
+                android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:textSize="22dp"
                 android:id="@+id/produto_adapter_editNome"
                 />
 
-            <TextView
-                android:text="Quantidade"
-                android:layout_width="220dp"
-                android:layout_height="25dp"
-                android:textSize="18dp"
-                android:id="@+id/produto_adapter_editQuantidade"
-                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Estoque: "
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:textSize="16dp"
+                    />
+
+                <TextView
+                    android:text="Quantidade"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:textSize="16dp"
+                    android:id="@+id/produto_adapter_editQuantidade"
+                    />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -46,21 +62,47 @@
             android:layout_margin="10dp"
             >
 
-            <TextView
-                android:text="Custo"
-                android:layout_width="220dp"
-                android:layout_height="25dp"
-                android:textSize="20dp"
-                android:id="@+id/produto_adapter_editCusto"
-                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:text="Preço"
-                android:layout_width="220dp"
-                android:layout_height="25dp"
-                android:textSize="20dp"
-                android:id="@+id/produto_adapter_editPreco"
-                />
+                <TextView
+                    android:text="Custo: R$"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:textSize="16dp"
+                    />
+
+                <TextView
+                    android:text="Custo"
+                    android:layout_width="220dp"
+                    android:layout_height="25dp"
+                    android:textSize="14dp"
+                    android:id="@+id/produto_adapter_editCusto"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Preço: R$"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:textSize="16dp"
+                    />
+
+                <TextView
+                    android:text="Preço"
+                    android:layout_width="220dp"
+                    android:layout_height="25dp"
+                    android:textSize="14dp"
+                    android:id="@+id/produto_adapter_editPreco"
+                    />
+
+            </LinearLayout>
 
         </LinearLayout>
 
