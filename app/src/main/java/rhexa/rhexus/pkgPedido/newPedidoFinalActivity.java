@@ -21,18 +21,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rhexa.rhexus.R;
-import rhexa.rhexus.pkgPessoa.Pessoa;
-import rhexa.rhexus.pkgPessoa.PessoaDAO;
-import rhexa.rhexus.pkgPessoa.PessoaListActivity;
+import rhexa.rhexus.pkgPedido.Pedido;
+import rhexa.rhexus.pkgPedido.PedidoDAO;
+import rhexa.rhexus.pkgPedido.PedidoListActivity;
 import rhexa.rhexus.pkgProduto.newProdActivity;
 
 public class newPedidoFinalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    EditText numeroPed,emissao,editCodPessoa,alorProd,edtEndereco,edtTelefone, edtId, edtNome, edtCPFCNPJ;
+
+    /*EditText numeroPed,emissao,editCodPessoa,alorProd,edtEndereco,edtTelefone, edtId, edtNome, edtCPFCNPJ;
     Spinner spTipo;
     PessoaDAO pessoaDAO;
     private String[] tiposDescricao = new String[]{"Física","Jurídica"};
     private List<Pessoa> pessoas;
+    */
+
+    EditText edtnumeroPed,edtemissao,edtCodPessoa,edtPessoaNome,edtvalorProd,edtDescV,edtparcelas,edtvalorFinal;
+    PedidoDAO pedidoDAO;
+    private List<Pedido> pedidos;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,33 +81,27 @@ public class newPedidoFinalActivity extends AppCompatActivity implements Navigat
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pessoa_cad);
-        edtId = (EditText) findViewById(R.id.activity_pessoa_cad_edtId);
-        edtNome = (EditText) findViewById(R.id.activity_pessoa_cad_edtNome);
-        edtCPFCNPJ = (EditText) findViewById(R.id.activity_pessoa_cad_edtCPFCNPJ);
-        edtEndereco = (EditText) findViewById(R.id.activity_pessoa_cad_edtEndereco);
-        spTipo = (Spinner) findViewById(R.id.activity_pessoa_cad_spTipo);
-        edtTelefone = (EditText) findViewById(R.id.activity_pessoa_cad_edtTelefone);
-        pessoaDAO = new PessoaDAO(this);
+        setContentView(R.layout.new_pedido_final_layout);
+        edtnumeroPed = (EditText) findViewById(R.id.new_pedido_final_numeroPed);
+        edtemissao = (EditText) findViewById(R.id.new_pedido_final_emissao);
+        edtCodPessoa = (EditText) findViewById(R.id.new_pedido_final_editCodPessoa);
+        edtPessoaNome = (EditText) findViewById(R.id.new_pedido_final_editPessoa);
+        edtvalorProd = (EditText) findViewById(R.id.new_pedido_final_valorProd);
+        edtparcelas = (EditText) findViewById(R.id.new_pedido_final_parcelas);
+        edtvalorFinal = (EditText) findViewById(R.id.new_pedido_final_valorFinal); 
+        pedidoDAO = new PedidoDAO(this);
         Intent intent = getIntent();
-        Pessoa pessoa;
-        String message = intent.getStringExtra(PessoaListActivity.EXTRA_MESSAGE);
-
-
-        ArrayAdapter<String> aptPessoaTipo = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, tiposDescricao);
-        spTipo.setAdapter(aptPessoaTipo);
-
+        Pedido pedido;
+        String message = intent.getStringExtra(PedidoListActivity.EXTRA_MESSAGE);
+     
         if (message.length() > 0){
-            pessoas = new ArrayList<Pessoa>();
-            pessoas = pessoaDAO.listar(Integer.valueOf(message));
+            pedidos = new ArrayList<Pedido>();
+            pedidos = pedidoDAO.listar(Integer.valueOf(message));
 
-            for (Pessoa p : pessoas){
-                edtId.setText(String.valueOf(p.getId()));
-                edtNome.setText(p.getNome());
-                edtTelefone.setText(p.getTelefone());
-                spTipo.setSelection(getIndex(spTipo,p.getTipo()));
-                edtEndereco.setText(p.getEndereco());
-                edtCPFCNPJ.setText(p.getCpfcnpj());
+            for (Pedido p : pedidos){
+                edtnumeroPed.setText(String.valueOf(p.getId()));
+                edtemissao.setText(p.getEmissao());
+                edtCodPessoa.setText(String.valueOf(p.getPessoaID()));
             }
         }
     }
@@ -118,7 +119,7 @@ public class newPedidoFinalActivity extends AppCompatActivity implements Navigat
         if (id == R.id.nav_itens) {
             it = new Intent(this, newProdActivity.class);
         } else if (id == R.id.nav_people) {
-            it = new Intent(this, PessoaListActivity.class);
+            it = new Intent(this, PedidoListActivity.class);
         } else if (id == R.id.nav_pedido) {
             it = getIntent();
             finish();

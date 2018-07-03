@@ -77,8 +77,8 @@
                 />
 
             <TextView
-                android:id="@+id/pedido_finalizar"
-                android:text="FINALIZAR"
+                android:id="@+id/pedido_parcelas"
+                android:text="PARCELAS"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="#BBBBBB"
@@ -150,7 +150,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/new_prod_pedido_editPessoa"
+                android:id="@+id/new_pedido_final_editPessoa"
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
                 android:hint="Nome da pessoa"
@@ -166,7 +166,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/new_pedido_valorProd"
+                android:id="@+id/new_pedido_final_valorProd"
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
                 android:hint="R$"
@@ -184,7 +184,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/new_prod_layout_editDescP"
+                android:id="@+id/new_pedido_final_editDescP"
                 android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:hint="%"
@@ -238,15 +238,18 @@
                 android:textSize="18sp" />
 
         </GridLayout>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/new_pedido_final_finalbt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="#AAAAAA"
-            android:text="Finalizar" />
-
+            <Button
+                android:id="@+id/new_pedido_final_finalbt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#AAAAAA"
+                android:text="Finalizar" />
+        </GridLayout>
     </LinearLayout>
 
 </ScrollView>
