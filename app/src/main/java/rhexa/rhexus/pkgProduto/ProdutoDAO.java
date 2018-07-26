@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import rhexa.rhexus.BancoDados;
@@ -62,6 +63,31 @@ public class ProdutoDAO {
     public void excluir(String id){
         String [] where = new String[] {id};
         db.delete(Produto.TABELA, Produto.ID + " = ?", where);
+    }
+
+    public void atualizarEstoque(int id, String tipo, Double quantidade ){
+        List<Produto> produtos = new ArrayList<>();
+        produtos = listar(id);
+        if (tipo =="Saída"){
+            quantidade = quantidade * -1;
+        }
+
+        for (Produto produto : produtos) {
+            ContentValues values = new ContentValues();
+            String[] where = new String[]{String.valueOf(produto.getId())};
+            values.put(Produto.ID, produto.getId());
+            values.put(Produto.NOME, produto.getNome());
+            values.put(Produto.DESC, produto.getDesc());
+            values.put(Produto.CODIGO, produto.getCodigo());
+            values.put(Produto.CUSTO, produto.getCusto());
+            values.put(Produto.PRECO, produto.getPreco());
+            values.put(Produto.QUANTIDADE, quantidade);
+            values.put(Produto.MARGEM, produto.getQuantidade() + quantidade);
+            //values.put(Produto.IMAGE, produto.getImage());
+            values.put(Produto.ATIVO, produto.getAtivo());
+
+            db.update(Produto.TABELA, values, Produto.ID + " = ?", where);
+        }
     }
 
     public List<Produto> listar(){

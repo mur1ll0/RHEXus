@@ -103,6 +103,8 @@ public class MovimentoCadActivity extends AppCompatActivity {
         movimento.setValor(Float.valueOf(edtValor.getText().toString()));
         movimentoDAO.SalvarOuAlterar(movimento);
 
+        produtoDAO.atualizarEstoque(Integer.valueOf(edtProdutoId.getText().toString()),movimento.getTipo(),Double.valueOf(edtQuantidade.getText().toString()));
+
         finish();
 
     }
